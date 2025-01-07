@@ -1,9 +1,18 @@
 extends CharacterBody3D
 
+var isRunning = false
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
-const SENS = 0.003
+const WalkSpeed = 2
+const RunSpeed = 3.5
+const JumpVelocity = 4.5
+const Sensitivity = 0.003
+
+const WalkBobAmp = .04
+const RunBobAmp = .05
+const WalkBobRate = 8
+const RunBobRate = 12
+
+
 
 @onready var pivot = $pivot
 @onready var camera = $pivot/camera
@@ -13,10 +22,16 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		pivot.rotate_y(-event.relative.x * SENS)
-		camera.rotate_x(-event.relative.y * SENS)
+		pivot.rotate_y(-event.relative.x * Sensitivity)
+		camera.rotate_x(-event.relative.y * Sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 
+func GetBobOffset(t, running):
+	if running:
+		return Vector3(sin(t * RunBobRate/2), sin(t * RunBobRate), 0) * RunBobAmp
+	else:
+		return Vector3(sin(t * WalkBobRate/2), sin(t * WalkBobRate), 0) * WalkBobAmp
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -24,17 +39,33 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = JumpVelocity
+		
+	var speed
+	var bobAmp
+	if Input.is_action_pressed("run"):
+		isRunning = true
+		speed = RunSpeed
+		bobAmp = RunBobAmp
+	else:
+		isRunning = false
+		speed = WalkSpeed
+		bobAmp = WalkBobAmp
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+	if is_on_floor():
+		if direction:
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
+		else:
+			velocity.x = lerp(velocity.x, direction.x * speed, delta * 15.0)
+			velocity.z = lerp(velocity.z, direction.z * speed, delta * 15.0)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
+		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
+
+	var target = GetBobOffset(Time.get_unix_time_from_system(), isRunning) * (velocity.length() / speed) * float(is_on_floor())
+	camera.transform.origin = lerp(camera.transform.origin, target, .1)
 
 	move_and_slide()

@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnti6iutyi7in"]
+[gd_scene load_steps=7 format=3 uid="uid://bnti6iutyi7in"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_mxea4"]
-[ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_h8avp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_13t50"]
 
@@ -10,10 +9,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_b6wv7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6v8j1"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f8rtk"]
-albedo_color = Color(0.811427, 0.83321, 0.815222, 1)
-albedo_texture = ExtResource("2_h8avp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mp6jp"]
 albedo_color = Color(0.567023, 0.147012, 0.392536, 1)
@@ -48,10 +43,8 @@ transform = Transform3D(200, 0, 0, 0, 1, 0, 0, 0, 200, 0, 0, 0)
 shape = SubResource("BoxShape3D_b6wv7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MAP/ground"]
-transform = Transform3D(1.00155, 0, 0, 0, 1.00155, 0, 0, 0, 1.00155, 0, 0, 0)
 mesh = SubResource("BoxMesh_6v8j1")
 skeleton = NodePath("../StaticBody3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_f8rtk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="MAP"]
 transform = Transform3D(0.999143, 0.0261288, -0.0321127, -0.0102945, 0.908114, 0.418597, 0.0400994, -0.417907, 0.907604, 0.00728607, 16, -0.00556183)
