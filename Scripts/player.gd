@@ -1,21 +1,28 @@
 extends CharacterBody3D
 
-var isRunning = false
+var isRunning
+var moving
+
+
+
 
 const WalkSpeed = 2
 const RunSpeed = 3.5
 const JumpVelocity = 4.5
 const Sensitivity = 0.003
 
+#headbob
 const WalkBobAmp = .04
 const RunBobAmp = .05
-const WalkBobRate = 8
-const RunBobRate = 12
-
-
+const WalkBobRate = 10
+const RunBobRate = 17
+#footsteps
+var footstepProgress = 0
+var prevFootstepProgress = 0
 
 @onready var pivot = $pivot
 @onready var camera = $pivot/camera
+@onready var footstepAudio = $"Footstep Audio"
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -65,7 +72,26 @@ func _physics_process(delta):
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
 
+	if velocity.length() > .1 and is_on_floor():
+		moving = true
+	else:
+		moving = false
+	
 	var target = GetBobOffset(Time.get_unix_time_from_system(), isRunning) * (velocity.length() / speed) * float(is_on_floor())
 	camera.transform.origin = lerp(camera.transform.origin, target, .1)
+	
+	## play footsteps
+	if moving:
+		if isRunning:
+			footstepProgress = fmod(Time.get_unix_time_from_system()* RunBobRate, 2 * PI)
+		else:
+			footstepProgress = fmod(Time.get_unix_time_from_system()* WalkBobRate, 2 * PI)
+		
+		if footstepProgress < prevFootstepProgress:
+			footstepAudio.play()
+
+		
+		prevFootstepProgress = footstepProgress
+		
 
 	move_and_slide()
