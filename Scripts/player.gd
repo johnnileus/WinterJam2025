@@ -3,7 +3,8 @@ extends CharacterBody3D
 var isRunning
 var moving
 
-
+var footstepFilepath = "res://Assets/Sounds/Footsteps/wood/"
+var footstepSounds = []
 
 
 const WalkSpeed = 2
@@ -22,11 +23,19 @@ var prevFootstepProgress = 0
 
 @onready var pivot = $pivot
 @onready var camera = $pivot/camera
-@onready var footstepAudio = $"Footstep Audio"
+@onready var footstepAudioPlayer = $"Footstep Audio"
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+	loadFootsteps()
+	
+func loadFootsteps():
+	var steps = DirAccess.get_files_at(footstepFilepath)
+	for foot in steps:
+		if foot.ends_with(".ogg"):
+			var newFoot = load(footstepFilepath+"//"+foot)
+			footstepSounds.append(newFoot)
+	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		pivot.rotate_y(-event.relative.x * Sensitivity)
@@ -39,6 +48,14 @@ func GetBobOffset(t, running):
 	else:
 		return Vector3(sin(t * WalkBobRate/2), sin(t * WalkBobRate), 0) * WalkBobAmp
 	
+func playFootstep():
+	var sound = footstepSounds.pick_random()
+
+	print(sound)
+	footstepAudioPlayer.stream = sound
+	footstepAudioPlayer.play()
+	
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -88,7 +105,7 @@ func _physics_process(delta):
 			footstepProgress = fmod(Time.get_unix_time_from_system()* WalkBobRate, 2 * PI)
 		
 		if footstepProgress < prevFootstepProgress:
-			footstepAudio.play()
+			playFootstep()
 
 		
 		prevFootstepProgress = footstepProgress
