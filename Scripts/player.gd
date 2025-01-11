@@ -50,12 +50,9 @@ func GetBobOffset(t, running):
 	
 func playFootstep():
 	var sound = footstepSounds.pick_random()
-
-	print(sound)
 	footstepAudioPlayer.stream = sound
 	footstepAudioPlayer.play()
 	
-
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -112,3 +109,7 @@ func _physics_process(delta):
 		
 
 	move_and_slide()
+
+
+func _on_timer_timeout():
+	pass # Replace with function body.
