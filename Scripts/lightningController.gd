@@ -35,11 +35,11 @@ func _on_timer_timeout():
 func _on_sound_delay_timeout():
 	thunder_sound.play()
 
-
-
+func spawnLight():
+	curCooldown = avgCooldown + avgCooldown * randf_range(-0.3, 1)
+	startLightning(lightNodes[0])
+	lastActivated = Time.get_unix_time_from_system()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if lastActivated + curCooldown < Time.get_unix_time_from_system():
-		curCooldown = avgCooldown
-		startLightning(lightNodes[0])
-		lastActivated = Time.get_unix_time_from_system()
+		spawnLight()

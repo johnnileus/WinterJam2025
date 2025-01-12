@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmtbljadys08y"]
+
+[ext_resource type="Texture2D" uid="uid://dv6ypdpy0nlf0" path="res://Assets/spotlightProjector.png" id="1_bktkp"]
+[ext_resource type="Script" path="res://Scripts/vision_light.gd" id="2_fjwbc"]
+
+[node name="visionLight" type="SpotLight3D"]
+transform = Transform3D(-0.272672, -0.234297, 0.933143, 0.021017, 0.968213, 0.249244, -0.961878, 0.0875737, -0.25908, 0, 0, 0)
+layers = 2
+light_energy = 0.554
+light_projector = ExtResource("1_bktkp")
+shadow_enabled = true
+spot_range = 61.654
+spot_attenuation = -0.47
+spot_angle = 30.0
+script = ExtResource("2_fjwbc")
+decayTime = 6.0

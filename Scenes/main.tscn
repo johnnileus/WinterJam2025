@@ -1,12 +1,13 @@
-[gd_scene load_steps=19 format=4 uid="uid://bnti6iutyi7in"]
+[gd_scene load_steps=20 format=4 uid="uid://bnti6iutyi7in"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_mxea4"]
 [ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_h8avp"]
 [ext_resource type="PackedScene" uid="uid://b0mbmbsla8i0k" path="res://Assets/SceneModels/window_wall.tscn" id="3_37l1r"]
 [ext_resource type="PackedScene" uid="uid://ce8b58khybcxj" path="res://Assets/SceneModels/wall.tscn" id="4_ahn2y"]
-[ext_resource type="Script" path="res://Scenes/lightningController.gd" id="5_6i1a6"]
+[ext_resource type="Script" path="res://Scripts/lightningController.gd" id="5_6i1a6"]
 [ext_resource type="AudioStream" uid="uid://c1w502aq6jql4" path="res://Assets/Sounds/weather/big-thunder-clap-99753.mp3" id="6_65ulx"]
 [ext_resource type="AudioStream" uid="uid://d3vsl5me4n2f" path="res://Assets/Sounds/weather/rain-sound-188158.mp3" id="7_dftqf"]
+[ext_resource type="AudioStream" uid="uid://dddcparp5kb35" path="res://Assets/Sounds/weather/most-stormy-howling-wind-110211.mp3" id="8_53d1l"]
 
 [sub_resource type="Environment" id="Environment_n3s7m"]
 background_mode = 2
@@ -66,6 +67,8 @@ script = ExtResource("1_mxea4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+layers = 2
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_13t50")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
@@ -125,6 +128,30 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.387
 [node name="wall8" parent="MAP/walls" instance=ExtResource("4_ahn2y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.38733, 0.0740547, 18.4508)
 
+[node name="wall22" parent="MAP/walls" instance=ExtResource("4_ahn2y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.2074, 0.0740547, -1.48779)
+
+[node name="wall24" parent="MAP/walls" instance=ExtResource("4_ahn2y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.2074, 0.0740547, -5.48779)
+
+[node name="wall25" parent="MAP/walls" instance=ExtResource("4_ahn2y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.2074, 0.0740547, -9.48779)
+
+[node name="wall26" parent="MAP/walls" instance=ExtResource("4_ahn2y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.2074, 0.0740547, -13.4878)
+
+[node name="wall27" parent="MAP/walls" instance=ExtResource("4_ahn2y")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 15.2074, 0.0740547, -15.4878)
+
+[node name="wall28" parent="MAP/walls" instance=ExtResource("4_ahn2y")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 19.2074, 0.0740547, -15.4878)
+
+[node name="wall29" parent="MAP/walls" instance=ExtResource("4_ahn2y")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 23.2074, 0.0740547, -15.4878)
+
+[node name="wall23" parent="MAP/walls" instance=ExtResource("4_ahn2y")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 1.76678, 0.0740547, 6.86585)
+
 [node name="wall9" parent="MAP/walls" instance=ExtResource("4_ahn2y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.38733, 0.0740547, 14.3681)
 
@@ -169,6 +196,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.044, 0.0740547, 28.647)
 
 [node name="window wall2" parent="MAP/walls" instance=ExtResource("3_37l1r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5553, 0.0740547, 28.647)
+
+[node name="window wall3" parent="MAP/walls" instance=ExtResource("3_37l1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8836, 0.0740547, -11.291)
 
 [node name="lights" type="Node3D" parent="MAP"]
 
@@ -221,11 +251,20 @@ stream = ExtResource("6_65ulx")
 [node name="rainSound" type="AudioStreamPlayer3D" parent="MAP/weather"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2665, 0, 45.8137)
 stream = ExtResource("7_dftqf")
+volume_db = -7.207
+autoplay = true
+panning_strength = 0.5
+bus = &"Weather"
+
+[node name="windSound" type="AudioStreamPlayer3D" parent="MAP/weather"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2833, 0, 33.73)
+stream = ExtResource("8_53d1l")
+volume_db = -18.0
 autoplay = true
 bus = &"Weather"
 
 [node name="Rain" type="GPUParticles3D" parent="."]
-transform = Transform3D(3.32724, 0.663186, 0, -0.871397, 2.53224, 0, 0, 0, 2.03051, 11.9018, 19.009, 38.3559)
+transform = Transform3D(3.14444, 1.06068, 0, -1.39369, 2.39312, 0, 0, 0, 2.03051, 11.9018, 19.009, 38.3559)
 amount = 5000
 lifetime = 1.2
 process_material = SubResource("ParticleProcessMaterial_qmp1u")
