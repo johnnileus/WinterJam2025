@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bnti6iutyi7in"]
+[gd_scene load_steps=21 format=4 uid="uid://bnti6iutyi7in"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_mxea4"]
 [ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_h8avp"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://c1w502aq6jql4" path="res://Assets/Sounds/weather/big-thunder-clap-99753.mp3" id="6_65ulx"]
 [ext_resource type="AudioStream" uid="uid://d3vsl5me4n2f" path="res://Assets/Sounds/weather/rain-sound-188158.mp3" id="7_dftqf"]
 [ext_resource type="AudioStream" uid="uid://dddcparp5kb35" path="res://Assets/Sounds/weather/most-stormy-howling-wind-110211.mp3" id="8_53d1l"]
+[ext_resource type="Script" path="res://Scenes/interactable_objects.gd" id="9_d38ur"]
 
 [sub_resource type="Environment" id="Environment_n3s7m"]
 background_mode = 2
@@ -262,6 +263,16 @@ stream = ExtResource("8_53d1l")
 volume_db = -18.0
 autoplay = true
 bus = &"Weather"
+
+[node name="InteractableObjects" type="Node" parent="MAP"]
+script = ExtResource("9_d38ur")
+
+[node name="Camera3D" type="Camera3D" parent="MAP/InteractableObjects"]
+
+[node name="RotationAroundBase" type="Node3D" parent="MAP/InteractableObjects"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="MAP/InteractableObjects/RotationAroundBase"]
+transform = Transform3D(-0.105292, 0, -0.994441, 0, 1, 0, 0.994441, 0, -0.105292, 0.333583, 2.8933, -0.451204)
 
 [node name="Rain" type="GPUParticles3D" parent="."]
 transform = Transform3D(3.14444, 1.06068, 0, -1.39369, 2.39312, 0, 0, 0, 2.03051, 11.9018, 19.009, 38.3559)
