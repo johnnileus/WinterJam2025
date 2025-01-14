@@ -24,6 +24,8 @@ var prevFootstepProgress = 0
 @onready var pivot = $pivot
 @onready var camera = $pivot/camera
 @onready var footstepAudioPlayer = $"Footstep Audio"
+@onready var camera_object = $CameraObject
+@onready var model = $Model
 
 @onready var visionLight = preload("res://Scenes/vision_light.tscn")
 
@@ -32,7 +34,7 @@ func _ready():
 	loadFootsteps()
 	print(visionLight)
 		
-	
+
 func loadFootsteps():
 	var steps = DirAccess.get_files_at(footstepFilepath)
 	for foot in steps:
@@ -45,6 +47,10 @@ func _unhandled_input(event):
 		pivot.rotate_y(-event.relative.x * Sensitivity)
 		camera.rotate_x(-event.relative.y * Sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		
+		
+		model.global_rotation.y = camera.global_rotation.y
+	
 
 func GetBobOffset(t, running):
 	if running:
@@ -115,11 +121,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	if Input.is_action_just_pressed("takePicture"):
-		var newLight = visionLight.instantiate()
-		newLight.rotation = camera.global_rotation
-		newLight.position = camera.global_position
-		get_tree().root.add_child(newLight)
-
+	pass
+	
 func _on_timer_timeout():
 	pass # Replace with function body.

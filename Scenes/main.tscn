@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bnti6iutyi7in"]
+[gd_scene load_steps=21 format=4 uid="uid://bnti6iutyi7in"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_mxea4"]
 [ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_h8avp"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://c1w502aq6jql4" path="res://Assets/Sounds/weather/big-thunder-clap-99753.mp3" id="6_65ulx"]
 [ext_resource type="AudioStream" uid="uid://d3vsl5me4n2f" path="res://Assets/Sounds/weather/rain-sound-188158.mp3" id="7_dftqf"]
 [ext_resource type="AudioStream" uid="uid://dddcparp5kb35" path="res://Assets/Sounds/weather/most-stormy-howling-wind-110211.mp3" id="8_53d1l"]
+[ext_resource type="PackedScene" uid="uid://btpimjhjlfby" path="res://Scenes/camera.tscn" id="9_kxjdx"]
 
 [sub_resource type="Environment" id="Environment_n3s7m"]
 background_mode = 2
@@ -18,8 +19,6 @@ fog_density = 0.1258
 volumetric_fog_anisotropy = 0.7
 volumetric_fog_length = 8.0
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_13t50"]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m43ll"]
 
 [sub_resource type="OggPacketSequence" id="OggPacketSequence_wih66"]
@@ -29,6 +28,8 @@ sampling_rate = 44100.0
 
 [sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_whbh0"]
 packet_sequence = SubResource("OggPacketSequence_wih66")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_13t50"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b6wv7"]
 
@@ -62,14 +63,8 @@ size = 0.02
 environment = SubResource("Environment_n3s7m")
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64926, 0.840972, 22.7217)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0956, 0.840972, 6.85947)
 script = ExtResource("1_mxea4")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-layers = 2
-cast_shadow = 0
-mesh = SubResource("CapsuleMesh_13t50")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -85,6 +80,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.135834, -0.519816, -0.0349
 stream = SubResource("AudioStreamOggVorbis_whbh0")
 volume_db = -18.739
 bus = &"Footsteps"
+
+[node name="CameraObject" parent="Player" instance=ExtResource("9_kxjdx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.378162, 1.28009, -1.64005)
+
+[node name="Model" type="Node3D" parent="Player"]
+
+[node name="PlayerModel" type="MeshInstance3D" parent="Player/Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+layers = 2
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_13t50")
+skeleton = NodePath("../..")
+
+[node name="itemPivot" type="Node3D" parent="Player/Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38156, 1.31438, -1.58206)
 
 [node name="MAP" type="Node3D" parent="."]
 

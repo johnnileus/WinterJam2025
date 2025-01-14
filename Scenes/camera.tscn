@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://btpimjhjlfby"]
+
+[ext_resource type="Script" path="res://Scenes/camera.gd" id="1_g22y3"]
+[ext_resource type="Texture2D" uid="uid://dv6ypdpy0nlf0" path="res://Assets/spotlightProjector.png" id="2_dxw20"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n6new"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ryah1"]
+viewport_path = NodePath("SubViewport")
+
+[node name="CameraObject" type="Node3D"]
+script = ExtResource("1_g22y3")
+
+[node name="model" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.777187, 0, 0, 0, 0.521202, 0, 0, 0, 0.237182, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_n6new")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000535637, -0.0165604, -0.133995)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0.125533)
+texture = SubResource("ViewportTexture_ryah1")
+
+[node name="flash" type="SpotLight3D" parent="."]
+layers = 2
+light_energy = 3.297
+light_projector = ExtResource("2_dxw20")
+shadow_enabled = true
+spot_range = 60.0
+spot_attenuation = -0.47
+spot_angle = 40.0
+
+[node name="flashTimer" type="Timer" parent="."]
+wait_time = 0.01
+one_shot = true
+
+[node name="renderDelay" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="flashTimer" to="." method="_on_flash_length_timeout"]
+[connection signal="timeout" from="renderDelay" to="." method="_on_render_delay_timeout"]
