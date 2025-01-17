@@ -8,6 +8,7 @@ transform = Transform3D(-0.272672, -0.234297, 0.933143, 0.021017, 0.968213, 0.24
 layers = 2
 light_energy = 0.554
 light_projector = ExtResource("1_bktkp")
+light_cull_mask = 4294967293
 shadow_enabled = true
 spot_range = 61.654
 spot_attenuation = -0.47

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bnti6iutyi7in"]
+[gd_scene load_steps=22 format=4 uid="uid://bnti6iutyi7in"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_mxea4"]
 [ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_h8avp"]
@@ -57,13 +57,15 @@ albedo_color = Color(0.19882, 0.531332, 0.888195, 0.270588)
 material = SubResource("StandardMaterial3D_ugsl1")
 size = 0.02
 
+[sub_resource type="TorusMesh" id="TorusMesh_2ewmo"]
+
 [node name="root" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n3s7m")
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0956, 0.840972, 6.85947)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12743, 0.840972, 18.8101)
 script = ExtResource("1_mxea4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
@@ -73,7 +75,15 @@ shape = SubResource("CapsuleShape3D_m43ll")
 [node name="pivot" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00951862, 1.5, -0.0193906)
 
-[node name="camera" type="Camera3D" parent="Player/pivot"]
+[node name="cameraNode" type="Node3D" parent="Player/pivot"]
+
+[node name="camera" type="Camera3D" parent="Player/pivot/cameraNode"]
+
+[node name="itemPivot" type="Node3D" parent="Player/pivot/cameraNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.551797, -0.21991, -0.679478)
+
+[node name="closePivot" type="Node3D" parent="Player/pivot/cameraNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0187845, -0.0243256, -0.322328)
 
 [node name="Footstep Audio" type="AudioStreamPlayer3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.135834, -0.519816, -0.0349369)
@@ -82,7 +92,7 @@ volume_db = -18.739
 bus = &"Footsteps"
 
 [node name="CameraObject" parent="Player" instance=ExtResource("9_kxjdx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.378162, 1.28009, -1.64005)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.357803, 1.29181, -0.542487)
 
 [node name="Model" type="Node3D" parent="Player"]
 
@@ -92,9 +102,6 @@ layers = 2
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_13t50")
 skeleton = NodePath("../..")
-
-[node name="itemPivot" type="Node3D" parent="Player/Model"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38156, 1.31438, -1.58206)
 
 [node name="MAP" type="Node3D" parent="."]
 
@@ -230,8 +237,8 @@ spot_angle = 90.0
 spot_angle_attenuation = 4.9576e-05
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="MAP/lights"]
-transform = Transform3D(0.904759, 0.411664, -0.109287, 0.182613, -0.143116, 0.972713, 0.38479, -0.900028, -0.204661, 0.00807571, 24.4641, 28.9659)
-light_energy = 0.96
+transform = Transform3D(0.904759, 0.411664, -0.109287, -0.0801751, 0.41661, 0.905543, 0.41831, -0.810536, 0.409938, 0.00807571, 24.4641, 28.9659)
+light_energy = 0.0
 shadow_enabled = true
 
 [node name="weather" type="Node3D" parent="MAP"]
@@ -273,12 +280,20 @@ volume_db = -18.0
 autoplay = true
 bus = &"Weather"
 
-[node name="Rain" type="GPUParticles3D" parent="."]
+[node name="Rain" type="GPUParticles3D" parent="MAP"]
 transform = Transform3D(3.14444, 1.06068, 0, -1.39369, 2.39312, 0, 0, 0, 2.03051, 11.9018, 19.009, 38.3559)
 amount = 5000
 lifetime = 1.2
 process_material = SubResource("ParticleProcessMaterial_qmp1u")
 draw_pass_1 = SubResource("RibbonTrailMesh_h3her")
+
+[node name="spookyGhost" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4524, 1.95093, -5.17996)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="spookyGhost"]
+transform = Transform3D(1, 7.91926e-05, 0.000235628, -0.000235596, -0.000460881, 1, 7.92871e-05, -1, -0.000460865, 0, 1.36198, 0)
+cast_shadow = 3
+mesh = SubResource("TorusMesh_2ewmo")
 
 [connection signal="timeout" from="MAP/weather/flashDuration" to="MAP/weather" method="_on_timer_timeout"]
 [connection signal="timeout" from="MAP/weather/soundDelay" to="MAP/weather" method="_on_sound_delay_timeout"]

@@ -2,12 +2,22 @@ extends Node3D
 
 @onready var sub_viewport = $SubViewport
 @onready var camera_3d = $SubViewport/Camera3D
-@onready var item_pivot = $"../Model/itemPivot"
-@onready var visionLight = preload("res://Scenes/vision_light.tscn")
+@onready var item_pivot = $"../pivot/cameraNode/itemPivot"
+@onready var close_pivot = $"../pivot/cameraNode/closePivot"
+
+
+
+
 @onready var flash = $flash
+@onready var flash_noise = $flashNoise
 
 @onready var flash_timer = $flashTimer
 @onready var render_delay = $renderDelay
+
+@onready var visionLight = preload("res://Scenes/vision_light.tscn")
+
+var active = false
+var onCooldown = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,15 +26,30 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	global_position = item_pivot.global_position
-	global_rotation.y = item_pivot.global_rotation.y
-	camera_3d.global_position = item_pivot.global_position
-	camera_3d.global_rotation.y = item_pivot.global_rotation.y
 	
-	if Input.is_action_just_pressed("takePicture"):
-		flash.visible = true
-		flash_timer.start()
+	var newPos
+	if Input.is_action_pressed("rightClick"):
+		active = true
+		newPos = close_pivot.global_position
 		
+	else:
+		active = false
+		newPos = lerp(global_position, item_pivot.global_position, 0.1)
+		newPos = item_pivot.global_position
+		
+		
+	
+	global_rotation.y = item_pivot.global_rotation.y
+	camera_3d.global_rotation.y = item_pivot.global_rotation.y
+
+	global_position = newPos
+	camera_3d.global_position = newPos
+
+
+	if active && !onCooldown:
+		if Input.is_action_just_pressed("takePicture"):
+			flash.visible = true
+			flash_timer.start()
 
 func _on_flash_length_timeout():
 	sub_viewport.render_target_update_mode = sub_viewport.UPDATE_DISABLED
@@ -33,8 +58,12 @@ func _on_flash_length_timeout():
 	newLight.rotation = global_rotation
 	newLight.position = global_position
 	get_tree().root.add_child(newLight)
+	flash_noise.play()
+	
+	onCooldown = true
 	render_delay.start()
 
 
 func _on_render_delay_timeout():
 	sub_viewport.render_target_update_mode = sub_viewport.UPDATE_ALWAYS
+	onCooldown = false
