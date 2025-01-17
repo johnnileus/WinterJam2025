@@ -1,7 +1,6 @@
 extends CharacterBody3D
 
 var isRunning
-var lockedMovement: bool = false
 var moving
 
 var footstepFilepath = "res://Assets/Sounds/Footsteps/wood/"
@@ -23,8 +22,11 @@ var footstepProgress = 0
 var prevFootstepProgress = 0
 
 @onready var pivot = $pivot
-@onready var camera = $pivot/camera
+@onready var camera = $pivot/cameraNode/camera
+@onready var camera_node = $pivot/cameraNode
+@onready var camera_object = $CameraObject
 @onready var footstepAudioPlayer = $"Footstep Audio"
+@onready var model = $Model
 
 @onready var visionLight = preload("res://Scenes/vision_light.tscn")
 
@@ -33,7 +35,7 @@ func _ready():
 	loadFootsteps()
 	print(visionLight)
 		
-	
+
 func loadFootsteps():
 	var steps = DirAccess.get_files_at(footstepFilepath)
 	for foot in steps:
@@ -42,10 +44,14 @@ func loadFootsteps():
 			footstepSounds.append(newFoot)
 	
 func _unhandled_input(event):
-	if event is InputEventMouseMotion and lockedMovement == false:
+	if event is InputEventMouseMotion:
 		pivot.rotate_y(-event.relative.x * Sensitivity)
 		camera.rotate_x(-event.relative.y * Sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		
+		
+		model.global_rotation.y = camera.global_rotation.y
+	
 
 func GetBobOffset(t, running):
 	if running:
@@ -81,26 +87,23 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor():
-		if direction and lockedMovement == false:
+		if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
-		elif lockedMovement == false:
+		else:
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 15.0)
 			velocity.z = lerp(velocity.z, direction.z * speed, delta * 15.0)
-	elif lockedMovement == false:
+	else:
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
-	
-	if lockedMovement == true:
-		velocity.x = 0
-		velocity.z = 0
-	elif velocity.length() > .1 and is_on_floor():
+
+	if velocity.length() > .1 and is_on_floor():
 		moving = true
 	else:
 		moving = false
 	
 	var target = GetBobOffset(Time.get_unix_time_from_system(), isRunning) * (velocity.length() / speed) * float(is_on_floor())
-	camera.transform.origin = lerp(camera.transform.origin, target, .1)
+	camera_node.transform.origin = lerp(camera_node.transform.origin, target, .1)
 	
 	## play footsteps
 	if moving:
@@ -119,11 +122,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	if Input.is_action_just_pressed("takePicture"):
-		var newLight = visionLight.instantiate()
-		newLight.rotation = camera.global_rotation
-		newLight.position = camera.global_position
-		get_tree().root.add_child(newLight)
-
+	pass
+	
 func _on_timer_timeout():
 	pass # Replace with function body.
