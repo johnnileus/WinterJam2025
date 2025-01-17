@@ -23,7 +23,8 @@ var footstepProgress = 0
 var prevFootstepProgress = 0
 
 @onready var pivot = $pivot
-@onready var camera = $pivot/camera
+@onready var camera = $pivot/cameraNode/camera
+
 @onready var footstepAudioPlayer = $"Footstep Audio"
 
 @onready var visionLight = preload("res://Scenes/vision_light.tscn")
@@ -119,11 +120,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	if Input.is_action_just_pressed("takePicture"):
-		var newLight = visionLight.instantiate()
-		newLight.rotation = camera.global_rotation
-		newLight.position = camera.global_position
-		get_tree().root.add_child(newLight)
+	pass
 
 func _on_timer_timeout():
 	pass # Replace with function body.

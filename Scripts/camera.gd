@@ -63,7 +63,6 @@ func _on_flash_length_timeout():
 	onCooldown = true
 	render_delay.start()
 
-
 func _on_render_delay_timeout():
 	sub_viewport.render_target_update_mode = sub_viewport.UPDATE_ALWAYS
 	onCooldown = false
