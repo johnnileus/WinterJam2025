@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bnti6iutyi7in"]
+[gd_scene load_steps=22 format=4 uid="uid://bnti6iutyi7in"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_mxea4"]
 [ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_h8avp"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://c1w502aq6jql4" path="res://Assets/Sounds/weather/big-thunder-clap-99753.mp3" id="6_65ulx"]
 [ext_resource type="AudioStream" uid="uid://d3vsl5me4n2f" path="res://Assets/Sounds/weather/rain-sound-188158.mp3" id="7_dftqf"]
 [ext_resource type="AudioStream" uid="uid://dddcparp5kb35" path="res://Assets/Sounds/weather/most-stormy-howling-wind-110211.mp3" id="8_53d1l"]
+[ext_resource type="Script" path="res://Scenes/textHandler.gd" id="9_f5h35"]
 
 [sub_resource type="Environment" id="Environment_n3s7m"]
 background_mode = 2
@@ -56,12 +57,15 @@ albedo_color = Color(0.19882, 0.531332, 0.888195, 0.270588)
 material = SubResource("StandardMaterial3D_ugsl1")
 size = 0.02
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hraea"]
+size = Vector3(0.323486, 0.346436, 0.329712)
+
 [node name="root" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n3s7m")
 
-[node name="Player" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64926, 0.840972, 22.7217)
 script = ExtResource("1_mxea4")
 
@@ -106,6 +110,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_f8rtk")
 
 [node name="wall" parent="MAP/walls" instance=ExtResource("4_ahn2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2801, 0.0740547, 28.647)
+
+[node name="Loudspeaker" parent="MAP/walls/wall" instance=ExtResource("4_ahn2y")]
+transform = Transform3D(-0.0126482, 0, -0.49936, 0, 0.1, 0, 0.24968, 0, -0.0252965, 11.5883, 0.437866, -5.84865)
 
 [node name="wall2" parent="MAP/walls" instance=ExtResource("4_ahn2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8, 0.0740547, 28.647)
@@ -269,6 +276,65 @@ amount = 5000
 lifetime = 1.2
 process_material = SubResource("ParticleProcessMaterial_qmp1u")
 draw_pass_1 = SubResource("RibbonTrailMesh_h3her")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("9_f5h35")
+
+[node name="TextureRect" type="TextureRect" parent="Node"]
+anchors_preset = -1
+anchor_left = -0.272
+anchor_right = 0.263
+anchor_bottom = 0.5
+offset_left = 377.344
+offset_top = 511.0
+offset_right = 786.024
+offset_bottom = 272.0
+texture = ExtResource("2_h8avp")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Text 1" type="Label" parent="Node/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.02
+anchor_bottom = 0.013
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 702.5
+offset_bottom = 44.895
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Woag... What the hell am I typing, I really have no idea, this is just a placeholder"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Text 2" type="Label" parent="Node/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.02
+anchor_bottom = 0.013
+offset_left = 22.0
+offset_top = 10.0
+offset_right = 713.5
+offset_bottom = 49.895
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "This one is the second text, if you see this. yippee"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Button" type="Button" parent="Node/TextureRect"]
+layout_mode = 0
+offset_left = 938.0
+offset_top = 54.0
+offset_right = 1025.0
+offset_bottom = 85.0
+text = "Next"
+
+[node name="Area3D" type="Area3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1711, 0.67922, 22.8052)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263266, 0.0585394, -0.0512295)
+shape = SubResource("BoxShape3D_hraea")
 
 [connection signal="timeout" from="MAP/weather/flashDuration" to="MAP/weather" method="_on_timer_timeout"]
 [connection signal="timeout" from="MAP/weather/soundDelay" to="MAP/weather" method="_on_sound_delay_timeout"]

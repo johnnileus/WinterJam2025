@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 var isRunning
+var lockedMovement: bool = false
 var moving
 
 var footstepFilepath = "res://Assets/Sounds/Footsteps/wood/"
@@ -41,7 +42,7 @@ func loadFootsteps():
 			footstepSounds.append(newFoot)
 	
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and lockedMovement == false:
 		pivot.rotate_y(-event.relative.x * Sensitivity)
 		camera.rotate_x(-event.relative.y * Sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
@@ -80,17 +81,20 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor():
-		if direction:
+		if direction and lockedMovement == false:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
-		else:
+		elif lockedMovement == false:
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 15.0)
 			velocity.z = lerp(velocity.z, direction.z * speed, delta * 15.0)
-	else:
+	elif lockedMovement == false:
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
-
-	if velocity.length() > .1 and is_on_floor():
+	
+	if lockedMovement == true:
+		velocity.x = 0
+		velocity.z = 0
+	elif velocity.length() > .1 and is_on_floor():
 		moving = true
 	else:
 		moving = false
