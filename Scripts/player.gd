@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@export var inventory : Inventory
+
 var isRunning
 var lockedMovement: bool = false
 var moving
@@ -120,7 +122,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("inventory"):
+		inventory.visible = not inventory.visible
 
 func _on_timer_timeout():
 	pass # Replace with function body.
