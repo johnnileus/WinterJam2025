@@ -24,6 +24,7 @@ var prevFootstepProgress = 0
 
 @onready var pivot = $pivot
 @onready var camera = $pivot/cameraNode/camera
+@onready var camera_node = $pivot/cameraNode
 
 @onready var footstepAudioPlayer = $"Footstep Audio"
 
@@ -101,7 +102,7 @@ func _physics_process(delta):
 		moving = false
 	
 	var target = GetBobOffset(Time.get_unix_time_from_system(), isRunning) * (velocity.length() / speed) * float(is_on_floor())
-	camera.transform.origin = lerp(camera.transform.origin, target, .1)
+	camera_node.transform.origin = lerp(camera_node.transform.origin, target, .1)
 	
 	## play footsteps
 	if moving:
