@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://onovlj2xpiwa"]
+[gd_scene load_steps=4 format=3 uid="uid://onovlj2xpiwa"]
 
+[ext_resource type="FontFile" uid="uid://clpudgu0br1ei" path="res://Assets/RealHorror-Regular.ttf" id="1_5epgo"]
 [ext_resource type="Script" path="res://Scripts/buttons.gd" id="1_85h3f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v0ayr"]
@@ -21,9 +22,10 @@ offset_top = 86.0
 offset_right = 266.0
 offset_bottom = 232.0
 grow_horizontal = 2
-text = "Programming - 
+text = "Game Engine - Godot
 Assets - 
-Game Engine - Godot"
+Font - \"Real Horror Font\": https://www.dafont.com/real-horror.font
+Made for the NUGDS Winter Game Jam 2025"
 label_settings = SubResource("LabelSettings_v0ayr")
 horizontal_alignment = 1
 
@@ -40,7 +42,8 @@ offset_right = 37.0
 offset_bottom = -142.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("1_5epgo")
+theme_override_font_sizes/font_size = 40
 text = "Back"
 script = ExtResource("1_85h3f")
 
