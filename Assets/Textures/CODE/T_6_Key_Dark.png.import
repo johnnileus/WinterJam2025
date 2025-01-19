@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dve6krvool51k"
-path.s3tc="res://.godot/imported/T_3_Key_Dark-1.png-f0bf064041a04c043b39cbdfd0ee5044.s3tc.ctex"
+uid="uid://dt3nurtooxt3f"
+path.s3tc="res://.godot/imported/T_6_Key_Dark.png-aab7b81acafb26da76954a7460afb407.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/KBM Prompts/T_3_Key_Dark-1.png"
-dest_files=["res://.godot/imported/T_3_Key_Dark-1.png-f0bf064041a04c043b39cbdfd0ee5044.s3tc.ctex"]
+source_file="res://Assets/Textures/CODE/T_6_Key_Dark.png"
+dest_files=["res://.godot/imported/T_6_Key_Dark.png-aab7b81acafb26da76954a7460afb407.s3tc.ctex"]
 
 [params]
 
