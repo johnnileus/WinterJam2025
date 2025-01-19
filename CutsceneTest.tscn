@@ -1,0 +1,44 @@
+
+[ext_resource type="PackedScene" uid="uid://ce8b58khybcxj" path="res://Assets/SceneModels/wall.tscn" id="1_1tm2f"]
+[ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="1_ylax0"]
+[ext_resource type="Script" path="res://new_script.gd" id="2_ykjgp"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99136, 0.312687, 0)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Node"]
+anchors_preset = -1
+anchor_left = -0.272
+anchor_right = 0.263
+anchor_bottom = 0.5
+offset_left = 377.344
+offset_top = 511.0
+offset_right = 786.024
+offset_bottom = 272.0
+texture = ExtResource("1_ylax0")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Node/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.02
+anchor_bottom = 0.013
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 702.5
+offset_bottom = 44.895
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Woag... What the hell am I typing, I really have no idea, this is just a placeholder"
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("2_ykjgp")
+metadata/_edit_use_anchors_ = true
+
+[node name="wall" parent="." instance=ExtResource("1_1tm2f")]
+transform = Transform3D(0.172089, 0, 0.725374, 0, 0.1, 0, -0.181344, 0, 0.688355, -0.287986, -0.0932503, -4.30967)
+
+[node name="Camera3D" type="Camera3D" parent="wall"]
+transform = Transform3D(4, 0, 0, 0, 10, 0, 0, 0, 1, -3.52552, 12.903, 5.30246)

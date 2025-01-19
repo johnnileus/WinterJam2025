@@ -9,7 +9,6 @@ var moving
 var footstepFilepath = "res://Assets/Sounds/Footsteps/wood/"
 var footstepSounds = []
 
-
 const WalkSpeed = 2
 const RunSpeed = 3.5
 const JumpVelocity = 4.5
