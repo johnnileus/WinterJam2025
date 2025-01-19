@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5xuxkkvhy2bt"]
+
+[ext_resource type="PackedScene" uid="uid://dkljkuxe1mvok" path="res://Assets/SceneModels/key.tscn" id="1_pugrb"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_n5thf"]
+
+[node name="danglyKey" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.005, 0, 0, 0, 2.047, 0, 0, 0, 0.005, 0.0176944, 2.86091, 0.0342505)
+mesh = SubResource("CylinderMesh_n5thf")
+
+[node name="key" parent="." instance=ExtResource("1_pugrb")]
+transform = Transform3D(-6.11959e-08, -1.4, 0, 1.4, -6.11959e-08, 0, 0, 0, 1.4, 0.0245152, 0.778819, 0.0401202)

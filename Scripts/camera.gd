@@ -4,9 +4,9 @@ extends Node3D
 @onready var camera_3d = $SubViewport/Camera3D
 @onready var item_pivot = $"../pivot/cameraNode/itemPivot"
 @onready var close_pivot = $"../pivot/cameraNode/closePivot"
+@onready var spookyshadow = $spookyshadow
 
-
-
+var counter = 0
 
 @onready var flash = $flash
 @onready var flash_noise = $flashNoise
@@ -51,6 +51,14 @@ func _process(delta):
 		if Input.is_action_just_pressed("takePicture") and hasCamera:
 			flash.visible = true
 			flash_timer.start()
+			counter+= 1
+			if counter % 7 == 0:
+				spookyshadow.visible = true
+
+
+			
+			
+			
 
 func _on_flash_length_timeout():
 	sub_viewport.render_target_update_mode = sub_viewport.UPDATE_DISABLED
@@ -60,6 +68,7 @@ func _on_flash_length_timeout():
 	newLight.position = global_position
 	get_tree().root.add_child(newLight)
 	flash_noise.play()
+	spookyshadow.visible = false
 	
 	onCooldown = true
 	render_delay.start()

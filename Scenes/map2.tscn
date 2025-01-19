@@ -13,12 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://djvwurmmji0bl" path="res://Assets/SceneModels/table.tscn" id="11_wb7fs"]
 [ext_resource type="PackedScene" uid="uid://d1l0cwgpuyg8s" path="res://Assets/SceneModels/bookshelf.tscn" id="12_s16mj"]
 [ext_resource type="PackedScene" uid="uid://bf3g5i7gk8u2d" path="res://Assets/SceneModels/book.tscn" id="13_7pdbf"]
-[ext_resource type="PackedScene" uid="uid://b78kmf76dri7u" path="res://Assets/SceneModels/ceiling.tscn" id="14_hihw1"]
 [ext_resource type="PackedScene" uid="uid://bvr5olw6gewks" path="res://Assets/SceneModels/standing_light.tscn" id="15_181pe"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="16_jsy5g"]
 [ext_resource type="PackedScene" uid="uid://cde0kyfdxi85r" path="res://Scenes/camera.tscn" id="17_3cgc3"]
 [ext_resource type="PackedScene" uid="uid://beh7fqcp1w553" path="res://Inventory/inventory.tscn" id="18_jxf48"]
 [ext_resource type="Script" path="res://pickup.gd" id="19_6od7y"]
+[ext_resource type="PackedScene" uid="uid://b5xuxkkvhy2bt" path="res://Scenes/dangly_key.tscn" id="20_ajwcx"]
 [ext_resource type="Texture2D" uid="uid://cvqjiwofxm8e" path="res://Assets/KBM Prompts/T_Mouse_Left_Key_Dark.png" id="20_wxyuh"]
 
 [sub_resource type="Sky" id="Sky_d7u4p"]
@@ -92,7 +92,7 @@ spot_attenuation = -0.47
 spot_angle = 17.57
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="MAP/lights"]
-transform = Transform3D(0.904759, 0.411664, -0.109287, 0.182613, -0.143116, 0.972713, 0.38479, -0.900028, -0.204661, -0.0460739, 24.4641, 29.0019)
+transform = Transform3D(0.904759, 0.411664, -0.109287, 0.182613, -0.143116, 0.972713, 0.38479, -0.900028, -0.204661, -0.0505848, 24.5143, 28.9198)
 light_energy = 0.0
 shadow_enabled = true
 
@@ -145,7 +145,7 @@ bus = &"Weather"
 [node name="Rain" type="GPUParticles3D" parent="MAP"]
 transform = Transform3D(3.14444, 1.06068, 0, -1.39369, 2.39312, 0, 0, 0, 2.03051, 11.9018, 19.009, 38.3559)
 amount = 5000
-lifetime = 1.2
+lifetime = 0.4
 process_material = SubResource("ParticleProcessMaterial_h27m1")
 draw_pass_1 = SubResource("RibbonTrailMesh_kkfqn")
 
@@ -313,18 +313,6 @@ transform = Transform3D(0.994847, 0, 0.101386, 0, 1, 0, -0.101386, 0, 0.994847, 
 [node name="book3" parent="MAP/objects" instance=ExtResource("13_7pdbf")]
 transform = Transform3D(0.840266, 0.53537, 0.0856326, -0.532611, 0.844618, -0.0542791, -0.101386, 0, 0.994847, 8.32721, 0.872049, 27.3655)
 
-[node name="ceiling" parent="MAP/objects" instance=ExtResource("14_hihw1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 24)
-
-[node name="ceiling2" parent="MAP/objects" instance=ExtResource("14_hihw1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 24)
-
-[node name="ceiling3" parent="MAP/objects" instance=ExtResource("14_hihw1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 16)
-
-[node name="ceiling4" parent="MAP/objects" instance=ExtResource("14_hihw1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 16)
-
 [node name="standingLight" parent="MAP/objects" instance=ExtResource("15_181pe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2799, 0.495351, 26.2413)
 
@@ -392,6 +380,9 @@ shape = SubResource("BoxShape3D_bmhe0")
 transform = Transform3D(-0.005, 0, -7.54979e-10, 0, 0.005, 0, 7.54979e-10, 0, -0.005, 0, 0.00880121, 0)
 visible = false
 texture = ExtResource("20_wxyuh")
+
+[node name="danglyKey" parent="." instance=ExtResource("20_ajwcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05504, 0.52928, 17.7081)
 
 [connection signal="timeout" from="MAP/weather/flashDuration" to="MAP/weather" method="_on_timer_timeout"]
 [connection signal="timeout" from="MAP/weather/soundDelay" to="MAP/weather" method="_on_sound_delay_timeout"]
