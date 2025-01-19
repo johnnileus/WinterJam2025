@@ -19,3 +19,7 @@ script = ExtResource("1_b41aw")
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 2
 texture_normal = SubResource("GradientTexture2D_pldsu")
+
+[connection signal="gui_input" from="TextureButton" to="." method="_on_texture_button_gui_input"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
