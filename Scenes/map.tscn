@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://ccrw5binp6s5o"]
+[gd_scene load_steps=28 format=4 uid="uid://ccrw5binp6s5o"]
 
 [ext_resource type="PackedScene" uid="uid://ce8b58khybcxj" path="res://Assets/SceneModels/wall.tscn" id="2_78p46"]
 [ext_resource type="PackedScene" uid="uid://b0mbmbsla8i0k" path="res://Assets/SceneModels/window_wall.tscn" id="3_ucbwl"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://d3r48gm18w5o8" path="res://Assets/SceneModels/floor.tscn" id="12_ooli6"]
 [ext_resource type="PackedScene" uid="uid://bht1tqr5fdh0r" path="res://Assets/SceneModels/pillar.tscn" id="13_gnslx"]
 [ext_resource type="PackedScene" uid="uid://d1l0cwgpuyg8s" path="res://Assets/SceneModels/bookshelf.tscn" id="15_olb1q"]
+[ext_resource type="PackedScene" uid="uid://bf3g5i7gk8u2d" path="res://Assets/SceneModels/book.tscn" id="16_eshht"]
+[ext_resource type="PackedScene" uid="uid://b78kmf76dri7u" path="res://Assets/SceneModels/ceiling.tscn" id="17_3xkdp"]
+[ext_resource type="PackedScene" uid="uid://bvr5olw6gewks" path="res://Assets/SceneModels/standing_light.tscn" id="18_a0i7n"]
 
 [sub_resource type="Sky" id="Sky_d7u4p"]
 
@@ -320,6 +323,30 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.095
 
 [node name="bookshelf" parent="." instance=ExtResource("15_olb1q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22351, 0.495351, 27.4362)
+
+[node name="book" parent="." instance=ExtResource("16_eshht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.67938, 0.872049, 27.3655)
+
+[node name="book2" parent="." instance=ExtResource("16_eshht")]
+transform = Transform3D(0.994847, 0, 0.101386, 0, 1, 0, -0.101386, 0, 0.994847, 8.58101, 0.872049, 27.3655)
+
+[node name="book3" parent="." instance=ExtResource("16_eshht")]
+transform = Transform3D(0.840266, 0.53537, 0.0856326, -0.532611, 0.844618, -0.0542791, -0.101386, 0, 0.994847, 8.32721, 0.872049, 27.3655)
+
+[node name="ceiling" parent="." instance=ExtResource("17_3xkdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 24)
+
+[node name="ceiling2" parent="." instance=ExtResource("17_3xkdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 24)
+
+[node name="ceiling3" parent="." instance=ExtResource("17_3xkdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 16)
+
+[node name="ceiling4" parent="." instance=ExtResource("17_3xkdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 16)
+
+[node name="standingLight" parent="." instance=ExtResource("18_a0i7n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2799, 0.495351, 26.2413)
 
 [connection signal="timeout" from="MAP/weather/flashDuration" to="MAP/weather" method="_on_timer_timeout"]
 [connection signal="timeout" from="MAP/weather/soundDelay" to="MAP/weather" method="_on_sound_delay_timeout"]
