@@ -3,6 +3,8 @@ extends Area3D
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var realCam = get_tree().get_nodes_in_group("camera")[0]
 @onready var fakeCam = get_tree().get_nodes_in_group("fakeCam")[0]
+@onready var inventory = player.get_node("CanvasLayer/Inventory")
+@onready var CAMERA_ITEM = preload("res://Items/camera_item.tscn").instantiate()
 
 var is_player_nearby: bool = false
 
@@ -19,15 +21,15 @@ func _process(delta: float) -> void:
 		realCam.visible = true
 		realCam.hasCamera = true
 		fakeCam.queue_free()
+		inventory.add_item(CAMERA_ITEM, 1)
+		
 
 func _on_trigger_entered(body):
 	if body.name == "Player":
-		print_debug('in')
 		is_player_nearby = true
 		$Prompt.visible = true
 
 func _on_trigger_exited(body):
 	if body.name == "Player":
-		print_debug('out')
 		is_player_nearby = false
 		$Prompt.visible = false

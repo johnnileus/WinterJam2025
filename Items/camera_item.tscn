@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://j6fcc01u2cnq"]
+
+[ext_resource type="Script" path="res://Scripts/item.gd" id="1_6ljx3"]
+[ext_resource type="Texture2D" uid="uid://do76ifhrv2ndx" path="res://Assets/camerapic.png" id="2_3wjko"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2h6l"]
+
+[node name="cameraItem" type="Area3D"]
+script = ExtResource("1_6ljx3")
+item_name = "camera"
+icon = ExtResource("2_3wjko")
+is_stackable = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("2_3wjko")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_u2h6l")

@@ -44,8 +44,8 @@ columns = 6
 [node name="Tooltip" parent="." instance=ExtResource("3_1pnk7")]
 z_index = 100
 layout_mode = 0
-offset_left = -35.0
-offset_top = -148.0
-offset_right = -35.0
-offset_bottom = -84.0001
+offset_left = -413.733
+offset_top = 1090.4
+offset_right = -413.733
+offset_bottom = 1154.4
 mouse_filter = 2

@@ -4,6 +4,8 @@ extends Control
 class_name Inventory
 
 var inventory_item_scene = preload("res://Inventory/inventoryItem.tscn")
+const TEST_PARROT_3D = preload("res://Items/testParrot3D.tscn")
+const CAMERA_ITEM = preload("res://Items/camera_item.tscn")
 
 @export var rows : int = 3
 @export var cols : int = 6
@@ -23,7 +25,6 @@ func _ready():
 		slot.slot_input.connect(self._on_slot_input)
 		slot.slot_hovered.connect(self._on_slot_hovered)
 	tooltip.visible = false
-	
 	
 
 func _process(delta):
