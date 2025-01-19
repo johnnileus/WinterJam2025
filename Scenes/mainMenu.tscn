@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cilvkxulw8xhb"]
+[gd_scene load_steps=4 format=3 uid="uid://hc04g1tbyfd"]
 
 [ext_resource type="FontFile" uid="uid://clpudgu0br1ei" path="res://Assets/RealHorror-Regular.ttf" id="1_8ihvb"]
 [ext_resource type="Script" path="res://Scripts/buttons.gd" id="1_bdv4y"]

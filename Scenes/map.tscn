@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://ccrw5binp6s5o"]
+[gd_scene load_steps=25 format=4 uid="uid://ccrw5binp6s5o"]
 
 [ext_resource type="PackedScene" uid="uid://ce8b58khybcxj" path="res://Assets/SceneModels/wall.tscn" id="2_78p46"]
 [ext_resource type="PackedScene" uid="uid://b0mbmbsla8i0k" path="res://Assets/SceneModels/window_wall.tscn" id="3_ucbwl"]
@@ -7,16 +7,20 @@
 [ext_resource type="AudioStream" uid="uid://d3vsl5me4n2f" path="res://Assets/Sounds/weather/rain-sound-188158.mp3" id="6_k3pbo"]
 [ext_resource type="AudioStream" uid="uid://dddcparp5kb35" path="res://Assets/Sounds/weather/most-stormy-howling-wind-110211.mp3" id="7_3h6xx"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="8_sowaj"]
+[ext_resource type="PackedScene" uid="uid://beh7fqcp1w553" path="res://Inventory/inventory.tscn" id="9_sgorh"]
 [ext_resource type="PackedScene" uid="uid://cde0kyfdxi85r" path="res://Scenes/camera.tscn" id="9_slhti"]
 [ext_resource type="PackedScene" uid="uid://djvwurmmji0bl" path="res://Assets/SceneModels/table.tscn" id="10_jp13b"]
 [ext_resource type="PackedScene" uid="uid://dxt0j3jleigrr" path="res://Assets/BaseModels/wall/wall.glb" id="11_kgb14"]
 [ext_resource type="PackedScene" uid="uid://cw7budeafs1xf" path="res://Assets/BaseModels/window/window.glb" id="12_cai8o"]
 [ext_resource type="PackedScene" uid="uid://d3r48gm18w5o8" path="res://Assets/SceneModels/floor.tscn" id="12_ooli6"]
 [ext_resource type="PackedScene" uid="uid://bht1tqr5fdh0r" path="res://Assets/SceneModels/pillar.tscn" id="13_gnslx"]
-[ext_resource type="PackedScene" uid="uid://0lg5h1th5mfk" path="res://Assets/SceneModels/carpet.tscn" id="14_3s2r8"]
+[ext_resource type="PackedScene" uid="uid://d1l0cwgpuyg8s" path="res://Assets/SceneModels/bookshelf.tscn" id="15_olb1q"]
+
+[sub_resource type="Sky" id="Sky_d7u4p"]
 
 [sub_resource type="Environment" id="Environment_c8v8m"]
 background_mode = 2
+sky = SubResource("Sky_d7u4p")
 ambient_light_color = Color(0.0940309, 0.157718, 0.242664, 1)
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 0.1258
@@ -109,7 +113,7 @@ spot_attenuation = -0.47
 spot_angle = 17.57
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="MAP/lights"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 9.42805, 0.493982, 22.6531)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 9.42805, 0.469432, 22.6531)
 light_color = Color(0.867157, 0.910116, 0, 1)
 light_energy = 0.04
 spot_range = 14.8393
@@ -168,9 +172,10 @@ lifetime = 1.2
 process_material = SubResource("ParticleProcessMaterial_h27m1")
 draw_pass_1 = SubResource("RibbonTrailMesh_kkfqn")
 
-[node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
+[node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("inventory") groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.37147, 0.840972, 25.8146)
 script = ExtResource("8_sowaj")
+inventory = NodePath("CanvasLayer/Inventory")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -199,6 +204,17 @@ bus = &"Footsteps"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.357803, 1.29181, -0.542487)
 
 [node name="Model" type="Node3D" parent="Player"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="Inventory" parent="Player/CanvasLayer" instance=ExtResource("9_sgorh")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="wall" parent="." instance=ExtResource("11_kgb14")]
 transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 9.83459, 0.484905, 9.1971)
@@ -302,8 +318,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 0)
 [node name="table" parent="." instance=ExtResource("10_jp13b")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.0957, 0.495351, 27.2185)
 
-[node name="carpet" parent="." instance=ExtResource("14_3s2r8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6783, 0.495351, 26.5071)
+[node name="bookshelf" parent="." instance=ExtResource("15_olb1q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22351, 0.495351, 27.4362)
 
 [connection signal="timeout" from="MAP/weather/flashDuration" to="MAP/weather" method="_on_timer_timeout"]
 [connection signal="timeout" from="MAP/weather/soundDelay" to="MAP/weather" method="_on_sound_delay_timeout"]

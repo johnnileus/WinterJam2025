@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duwpnyto5p57s"
-path.s3tc="res://.godot/imported/wall_1K-walllpaper_10-normal.jpg-352d5c00cc8abe43bbd67f5a80ff70bc.s3tc.ctex"
+uid="uid://ucbf678xxh10"
+path.s3tc="res://.godot/imported/bookshelf_plywood_nor_gl_1k.jpg-a49adcfafcdc73191548a5977e1d41e6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "469b3670a7b8000f4d8731ca06f5b4b5"
+}
 
 [deps]
 
-source_file="res://Assets/BaseModels/wall/wall_1K-walllpaper_10-normal.jpg"
-dest_files=["res://.godot/imported/wall_1K-walllpaper_10-normal.jpg-352d5c00cc8abe43bbd67f5a80ff70bc.s3tc.ctex"]
+source_file="res://Assets/BaseModels/bookshelf/bookshelf_plywood_nor_gl_1k.jpg"
+dest_files=["res://.godot/imported/bookshelf_plywood_nor_gl_1k.jpg-a49adcfafcdc73191548a5977e1d41e6.s3tc.ctex"]
 
 [params]
 
@@ -25,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Assets/BaseModels/wall/wall_1K-walllpaper_10-normal.jpg"
+roughness/src_normal="res://Assets/BaseModels/bookshelf/bookshelf_plywood_nor_gl_1k.jpg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
