@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://ccrw5binp6s5o"]
+[gd_scene load_steps=45 format=4 uid="uid://ccrw5binp6s5o"]
 
 [ext_resource type="PackedScene" uid="uid://b0mbmbsla8i0k" path="res://Assets/SceneModels/window_wall.tscn" id="3_ucbwl"]
 [ext_resource type="Script" path="res://Scripts/lightningController.gd" id="4_c8fks"]
@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://beh7fqcp1w553" path="res://Inventory/inventory.tscn" id="9_sgorh"]
 [ext_resource type="PackedScene" uid="uid://cde0kyfdxi85r" path="res://Scenes/camera.tscn" id="9_slhti"]
 [ext_resource type="PackedScene" uid="uid://djvwurmmji0bl" path="res://Assets/SceneModels/table.tscn" id="10_jp13b"]
-[ext_resource type="PackedScene" uid="uid://dxt0j3jleigrr" path="res://Assets/BaseModels/wall/wall.glb" id="11_kgb14"]
-[ext_resource type="PackedScene" uid="uid://cw7budeafs1xf" path="res://Assets/BaseModels/window/window.glb" id="12_cai8o"]
 [ext_resource type="PackedScene" uid="uid://d3r48gm18w5o8" path="res://Assets/SceneModels/floor.tscn" id="12_ooli6"]
 [ext_resource type="PackedScene" uid="uid://bht1tqr5fdh0r" path="res://Assets/SceneModels/pillar.tscn" id="13_gnslx"]
 [ext_resource type="PackedScene" uid="uid://d1l0cwgpuyg8s" path="res://Assets/SceneModels/bookshelf.tscn" id="15_olb1q"]
@@ -20,6 +18,22 @@
 [ext_resource type="PackedScene" uid="uid://bvr5olw6gewks" path="res://Assets/SceneModels/standing_light.tscn" id="18_a0i7n"]
 [ext_resource type="Texture2D" uid="uid://cvqjiwofxm8e" path="res://Assets/KBM Prompts/T_Mouse_Left_Key_Dark.png" id="19_0r2rh"]
 [ext_resource type="Script" path="res://pickup.gd" id="19_3wx7p"]
+[ext_resource type="Texture2D" uid="uid://dmuuaug74idfq" path="res://Assets/Textures/CODE/T_3_Key_Dark.png" id="19_4p47u"]
+[ext_resource type="Texture2D" uid="uid://ch1fakuhoyjrm" path="res://Assets/Textures/CODE/T_1_Key_Dark.png" id="20_0tixy"]
+[ext_resource type="Texture2D" uid="uid://dt3nurtooxt3f" path="res://Assets/Textures/CODE/T_6_Key_Dark.png" id="21_yoelf"]
+[ext_resource type="Texture2D" uid="uid://b1ixqjtpl06qu" path="res://Assets/Textures/CODE/T_8_Key_Dark.png" id="22_5jnss"]
+[ext_resource type="PackedScene" uid="uid://bi7rsm7hh8qoi" path="res://Assets/BaseModels/low-poly_door/scene.gltf" id="23_jakge"]
+[ext_resource type="PackedScene" uid="uid://672pkefyofnh" path="res://Assets/SceneModels/keypad.tscn" id="24_3sfyo"]
+[ext_resource type="Texture2D" uid="uid://4yp1lprtijr7" path="res://Assets/KBM Prompts/T_1_Key_Dark.png" id="25_bt3ql"]
+[ext_resource type="Texture2D" uid="uid://gllryv2f75cl" path="res://Assets/KBM Prompts/T_2_Key_Dark.png" id="26_k051a"]
+[ext_resource type="Texture2D" uid="uid://brmsnu7rwry6p" path="res://Assets/KBM Prompts/T_3_Key_Dark.png" id="27_1dq8m"]
+[ext_resource type="Texture2D" uid="uid://dve6krvool51k" path="res://Assets/KBM Prompts/T_3_Key_Dark-1.png" id="28_lwt5l"]
+[ext_resource type="Texture2D" uid="uid://c0nq5l7jowpgh" path="res://Assets/KBM Prompts/T_5_Key_Dark.png" id="29_fa0ns"]
+[ext_resource type="Texture2D" uid="uid://cpsr6qcqr3alx" path="res://Assets/KBM Prompts/T_6_Key_Dark.png" id="30_df6bu"]
+[ext_resource type="Texture2D" uid="uid://g118ch878pnt" path="res://Assets/KBM Prompts/T_7_Key_Dark.png" id="31_2r8v3"]
+[ext_resource type="Texture2D" uid="uid://wcavtwta1wem" path="res://Assets/KBM Prompts/T_8_Key_Dark.png" id="32_3h0vm"]
+[ext_resource type="Texture2D" uid="uid://krb0nvnctn77" path="res://Assets/KBM Prompts/T_9_Key_Dark.png" id="33_wckjf"]
+[ext_resource type="Texture2D" uid="uid://c3wsv4o5isqf5" path="res://Assets/KBM Prompts/T_0_Key_Dark.png" id="34_em65o"]
 
 [sub_resource type="Sky" id="Sky_d7u4p"]
 
@@ -113,11 +127,10 @@ script = ExtResource("4_c8fks")
 lightPaths = [NodePath("SpotLight3D")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="MAP/weather"]
-transform = Transform3D(0.986794, -0.0981776, 0.128839, 0.0435468, 0.926897, 0.372781, -0.15602, -0.362248, 0.918931, 24.6259, 20.9742, 67.8356)
-visible = false
-light_energy = 11.666
+transform = Transform3D(0.994155, -0.104861, -0.0256884, 0.0295193, 0.0351459, 0.998946, -0.103848, -0.993866, 0.0380359, 8.79715, 20.9742, 16.3568)
+light_energy = 0.01
 shadow_enabled = true
-spot_range = 62.8869
+spot_range = 64.0062
 spot_attenuation = -1.07
 spot_angle = 27.86
 
@@ -199,12 +212,6 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="wall" parent="." instance=ExtResource("11_kgb14")]
-transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 9.83459, 0.484905, 9.1971)
-
-[node name="window" parent="." instance=ExtResource("12_cai8o")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.844, 0.474704, 9.20771)
-
 [node name="window2" parent="." instance=ExtResource("3_ucbwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.481, 28)
 
@@ -213,6 +220,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.481, 28)
 
 [node name="pillar" parent="." instance=ExtResource("13_gnslx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.372246, 22)
+
+[node name="pillar5" parent="." instance=ExtResource("13_gnslx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.372246, 10)
+
+[node name="pillar6" parent="." instance=ExtResource("13_gnslx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.372246, 10)
 
 [node name="pillar2" parent="." instance=ExtResource("13_gnslx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.372246, 28)
@@ -230,7 +243,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 24)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 24)
 
 [node name="floor3" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.00043, 0.0213822, 15.9961)
 
 [node name="floor4" parent="." instance=ExtResource("12_ooli6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 16)
@@ -291,15 +304,19 @@ transform = Transform3D(0.840266, 0.53537, 0.0856326, -0.532611, 0.844618, -0.05
 
 [node name="ceiling" parent="." instance=ExtResource("17_3xkdp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 24)
+visible = false
 
 [node name="ceiling2" parent="." instance=ExtResource("17_3xkdp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 24)
+visible = false
 
 [node name="ceiling3" parent="." instance=ExtResource("17_3xkdp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 16)
+visible = false
 
 [node name="ceiling4" parent="." instance=ExtResource("17_3xkdp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 16)
+visible = false
 
 [node name="standingLight" parent="." instance=ExtResource("18_a0i7n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2799, 0.495351, 26.2413)
@@ -333,6 +350,27 @@ transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0,
 [node name="wall33" parent="Walls" instance=ExtResource("18_7gyks")]
 transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 15)
 
+[node name="wall35" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 13)
+
+[node name="wall37" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 11)
+
+[node name="wall40" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0.999989, 0, -3.55271e-15, 0, 0.999989, 0, 3.55271e-15, 0, 0.999989, 4, 0.481, 10)
+
+[node name="wall41" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0.999989, 0, -3.55271e-15, 0, 0.999989, 0, 3.55271e-15, 0, 0.999989, 6, 0.481, 10)
+
+[node name="wall42" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0.999989, 0, -3.55271e-15, 0, 0.999989, 0, 3.55271e-15, 0, 0.999989, 10, 0.481, 10)
+
+[node name="wall44" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0.999989, 0, -3.55271e-15, 3.10588e-22, -0.999989, 8.74218e-08, -3.55271e-15, -8.74218e-08, -0.999989, 8, 6.481, 10)
+
+[node name="wall43" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0.999989, 0, -3.55271e-15, 0, 0.999989, 0, 3.55271e-15, 0, 0.999989, 12, 0.481, 10)
+
 [node name="wall12" parent="Walls" instance=ExtResource("18_7gyks")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 0.481, 28)
 
@@ -351,8 +389,29 @@ transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 9, 0.481
 [node name="wall30" parent="Walls" instance=ExtResource("18_7gyks")]
 transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 9, 0.481, 20)
 
+[node name="wall39" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 9, 0.481, 20)
+
+[node name="Decal2" type="Decal" parent="Walls/wall39"]
+transform = Transform3D(-4.97125, 5.03529e-07, -7.53662e-15, 0, -1.45765e-07, -1.14187, -7.50637e-07, -3.33472, 4.99128e-08, 0.134418, 2.46214, -0.672499)
+size = Vector3(0.5574, 0.38611, 2.27112)
+texture_albedo = ExtResource("19_4p47u")
+emission_energy = 0.0
+modulate = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
 [node name="wall31" parent="Walls" instance=ExtResource("18_7gyks")]
 transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 7, 0.481, 20)
+
+[node name="Decal" type="Decal" parent="Walls/wall31"]
+transform = Transform3D(-4.97125, 5.03529e-07, -7.53662e-15, 0, -1.45765e-07, -1.14187, -7.50637e-07, -3.33472, 4.99128e-08, 0.134418, 2.46214, -0.634541)
+size = Vector3(0.5574, 0.408875, 2.27112)
+texture_albedo = ExtResource("20_0tixy")
+emission_energy = 0.0
+modulate = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
 
 [node name="wall28" parent="Walls" instance=ExtResource("18_7gyks")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 19)
@@ -366,8 +425,23 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 17)
 [node name="wall34" parent="Walls" instance=ExtResource("18_7gyks")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 15)
 
+[node name="wall36" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 13)
+
+[node name="wall38" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 11)
+
 [node name="wall20" parent="Walls" instance=ExtResource("18_7gyks")]
 transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 12, 0.481, 22)
+
+[node name="Decal" type="Decal" parent="Walls/wall20"]
+transform = Transform3D(-4.97125, 5.03529e-07, -7.53662e-15, 0, -1.45765e-07, -1.14187, -7.50637e-07, -3.33472, 4.99128e-08, -0.123826, 2.46214, -0.68634)
+size = Vector3(0.5574, 0.37781, 2.27112)
+texture_albedo = ExtResource("21_yoelf")
+emission_energy = 0.0
+modulate = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
 
 [node name="wall21" parent="Walls" instance=ExtResource("18_7gyks")]
 transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 10, 0.481, 22)
@@ -376,7 +450,16 @@ transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 10, 0.48
 transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 6, 0.481, 22)
 
 [node name="wall23" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 4, 0.481, 22)
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 4.01364, 0.481, 22.0001)
+
+[node name="Decal" type="Decal" parent="Walls/wall23"]
+transform = Transform3D(-4.97125, 5.03529e-07, -7.53662e-15, 0, -1.45765e-07, -1.14187, -7.50637e-07, -3.33472, 4.99128e-08, 0.134418, 2.46214, -0.663544)
+size = Vector3(0.5574, 0.391481, 2.27112)
+texture_albedo = ExtResource("22_5jnss")
+emission_energy = 0.0
+modulate = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
 
 [node name="CameraCopy" parent="." groups=["fakeCam"] instance=ExtResource("9_slhti")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.9522, 1.57994, 26.9489)
@@ -391,9 +474,108 @@ transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -4.43757e-05, -0.001
 shape = SubResource("BoxShape3D_bmhe0")
 
 [node name="Prompt" type="Sprite3D" parent="CameraCopy/Area3D"]
-transform = Transform3D(-0.005, 0, -7.54979e-10, 0, 0.005, 0, 7.54979e-10, 0, -0.005, 0, 0.00880121, 0)
+transform = Transform3D(-0.003, 0, -4.52987e-10, 0, 0.003, 0, 4.52987e-10, 0, -0.003, -4.26248e-05, 0.0071467, 5.1111e-05)
 visible = false
 texture = ExtResource("19_0r2rh")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("23_jakge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00951, 0.495351, 10.134)
+
+[node name="keypad" parent="." instance=ExtResource("24_3sfyo")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.00786, 1.64505, 10.3708)
+
+[node name="Decal" type="Decal" parent="keypad"]
+transform = Transform3D(-2.173e-07, -3.33472, 4.99128e-08, 0, -1.45765e-07, -1.14187, 4.97125, -1.45765e-07, 2.18176e-15, -0.085947, 0.256703, -0.0626869)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("25_bt3ql")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal2" type="Decal" parent="keypad"]
+transform = Transform3D(-2.173e-07, -3.33472, 4.99128e-08, 0, -1.45765e-07, -1.14187, 4.97125, -1.45765e-07, 2.18176e-15, -0.085947, 0.256703, 0.00305176)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("26_k051a")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal3" type="Decal" parent="keypad"]
+transform = Transform3D(-2.173e-07, -3.33472, 4.99128e-08, 0, -1.45765e-07, -1.14187, 4.97125, -1.45765e-07, 2.18176e-15, -0.085947, 0.256703, 0.0625114)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("27_1dq8m")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal4" type="Decal" parent="keypad"]
+transform = Transform3D(-2.173e-07, -3.33472, 4.99128e-08, 0, -1.45765e-07, -1.14187, 4.97125, -1.45765e-07, 2.18176e-15, -0.085947, 0.18112, -0.0602531)
+visible = false
+size = Vector3(0.016355, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("28_lwt5l")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal5" type="Decal" parent="keypad"]
+transform = Transform3D(-2.173e-07, -3.33472, 4.99128e-08, 0, -1.45765e-07, -1.14187, 4.97125, -1.45765e-07, 2.18176e-15, -0.085947, 0.180034, 0.00403976)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.072272)
+texture_albedo = ExtResource("29_fa0ns")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal6" type="Decal" parent="keypad"]
+transform = Transform3D(-2.173e-07, -3.33472, 4.99128e-08, 0, -1.45765e-07, -1.14187, 4.97125, -1.45765e-07, 2.18176e-15, -0.085947, 0.181329, 0.0637207)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("30_df6bu")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal7" type="Decal" parent="keypad"]
+transform = Transform3D(-2.173e-07, -3.33472, 4.99128e-08, 0, -1.45765e-07, -1.14187, 4.97125, -1.45765e-07, 2.18176e-15, -0.085947, 0.109005, -0.05933)
+visible = false
+size = Vector3(0.0162952, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("31_2r8v3")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal9" type="Decal" parent="keypad"]
+transform = Transform3D(-2.173e-07, -3.33472, 4.99128e-08, 0, -1.45765e-07, -1.14187, 4.97125, -1.45765e-07, 2.18176e-15, -0.085947, 0.109474, 0.00387669)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.072272)
+texture_albedo = ExtResource("32_3h0vm")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal10" type="Decal" parent="keypad"]
+transform = Transform3D(-2.173e-07, -3.33472, 4.99128e-08, 0, -1.45765e-07, -1.14187, 4.97125, -1.45765e-07, 2.18176e-15, -0.085947, 0.110021, 0.061923)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("33_wckjf")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal11" type="Decal" parent="keypad"]
+transform = Transform3D(-2.173e-07, -3.33472, 4.99128e-08, 0, -1.45765e-07, -1.14187, 4.97125, -1.45765e-07, 2.18176e-15, -0.085947, 0.0358249, 0.00453186)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("34_em65o")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Camera3D" type="Camera3D" parent="keypad"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.825644, 0.116865, -5.72205e-06)
 
 [connection signal="timeout" from="MAP/weather/flashDuration" to="MAP/weather" method="_on_timer_timeout"]
 [connection signal="timeout" from="MAP/weather/soundDelay" to="MAP/weather" method="_on_sound_delay_timeout"]
