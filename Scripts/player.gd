@@ -127,3 +127,11 @@ func _process(delta):
 
 func _on_timer_timeout():
 	pass # Replace with function body.
+	
+func _on_area_3d_body_entered(body):
+	if body in get_tree().get_nodes_in_group("items"):
+		self.inventory.add_item(body as Item, 1)
+
+func _on_area_3d_area_entered(area):
+	if area in get_tree().get_nodes_in_group("items"):
+		self.inventory.add_item(area as Item, 1)

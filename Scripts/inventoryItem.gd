@@ -5,7 +5,7 @@ class_name InventoryItem
 @export var sprite : Sprite2D
 @export var label : Label
 
-func set_date(_name: String, _icon: Texture2D, _is_stackable: bool, _amount: int):
+func set_data(_name: String, _icon: Texture2D, _is_stackable: bool, _amount: int):
 	self.item_name = _name
 	self.name = _name
 	self.icon = _icon

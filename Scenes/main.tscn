@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bnti6iutyi7in"]
+[gd_scene load_steps=27 format=4 uid="uid://bnti6iutyi7in"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_mxea4"]
 [ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_h8avp"]
@@ -33,6 +33,9 @@ sampling_rate = 44100.0
 packet_sequence = SubResource("OggPacketSequence_wih66")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7olxr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3gi64"]
+height = 3.97376
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b6wv7"]
 
@@ -120,6 +123,12 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Area3D" type="Area3D" parent="Player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00823021)
+shape = SubResource("CapsuleShape3D_3gi64")
 
 [node name="MAP" type="Node3D" parent="."]
 
@@ -379,5 +388,7 @@ mesh = SubResource("TorusMesh_elsnc")
 [node name="TestParrot3d" parent="." instance=ExtResource("11_86rf5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2289, 3.75382, 2.84455)
 
+[connection signal="area_entered" from="Player/Area3D" to="Player" method="_on_area_3d_area_entered"]
+[connection signal="body_entered" from="Player/Area3D" to="Player" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="MAP/weather/flashDuration" to="MAP/weather" method="_on_timer_timeout"]
 [connection signal="timeout" from="MAP/weather/soundDelay" to="MAP/weather" method="_on_sound_delay_timeout"]

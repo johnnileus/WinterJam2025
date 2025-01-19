@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_r57v3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wcog5"]
-size = Vector3(8.09178, 5.46156, 0.231689)
+size = Vector3(8.82641, 5.46156, 1.1145)
 
 [node name="TestParrot3d" type="Area3D"]
 script = ExtResource("1_5h53m")
@@ -16,5 +16,5 @@ is_stackable = true
 texture = ExtResource("2_r57v3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00791168, -0.00562286, -0.0255127)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0475826, -0.00562286, 0.060669)
 shape = SubResource("BoxShape3D_wcog5")
