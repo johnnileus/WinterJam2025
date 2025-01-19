@@ -18,6 +18,7 @@ extends Node3D
 
 var active = false
 var onCooldown = false
+var hasCamera = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,7 +48,7 @@ func _process(delta):
 
 
 	if active && !onCooldown:
-		if Input.is_action_just_pressed("takePicture"):
+		if Input.is_action_just_pressed("takePicture") and hasCamera:
 			flash.visible = true
 			flash_timer.start()
 

@@ -1,6 +1,5 @@
-[gd_scene load_steps=28 format=4 uid="uid://ccrw5binp6s5o"]
+[gd_scene load_steps=31 format=4 uid="uid://ccrw5binp6s5o"]
 
-[ext_resource type="PackedScene" uid="uid://ce8b58khybcxj" path="res://Assets/SceneModels/wall.tscn" id="2_78p46"]
 [ext_resource type="PackedScene" uid="uid://b0mbmbsla8i0k" path="res://Assets/SceneModels/window_wall.tscn" id="3_ucbwl"]
 [ext_resource type="Script" path="res://Scripts/lightningController.gd" id="4_c8fks"]
 [ext_resource type="AudioStream" uid="uid://c1w502aq6jql4" path="res://Assets/Sounds/weather/big-thunder-clap-99753.mp3" id="5_o6eih"]
@@ -17,7 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://d1l0cwgpuyg8s" path="res://Assets/SceneModels/bookshelf.tscn" id="15_olb1q"]
 [ext_resource type="PackedScene" uid="uid://bf3g5i7gk8u2d" path="res://Assets/SceneModels/book.tscn" id="16_eshht"]
 [ext_resource type="PackedScene" uid="uid://b78kmf76dri7u" path="res://Assets/SceneModels/ceiling.tscn" id="17_3xkdp"]
+[ext_resource type="PackedScene" uid="uid://ce8b58khybcxj" path="res://Assets/SceneModels/wall.tscn" id="18_7gyks"]
 [ext_resource type="PackedScene" uid="uid://bvr5olw6gewks" path="res://Assets/SceneModels/standing_light.tscn" id="18_a0i7n"]
+[ext_resource type="Texture2D" uid="uid://cvqjiwofxm8e" path="res://Assets/KBM Prompts/T_Mouse_Left_Key_Dark.png" id="19_0r2rh"]
+[ext_resource type="Script" path="res://pickup.gd" id="19_3wx7p"]
 
 [sub_resource type="Sky" id="Sky_d7u4p"]
 
@@ -60,6 +62,9 @@ sampling_rate = 44100.0
 [sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_ya0i2"]
 packet_sequence = SubResource("OggPacketSequence_wih66")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bmhe0"]
+size = Vector3(0.454224, 1.71161, 0.815948)
+
 [node name="map" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -77,29 +82,109 @@ shape = SubResource("BoxShape3D_1bknx")
 
 [node name="walls" type="Node3D" parent="MAP"]
 
-[node name="wall22" parent="MAP/walls" instance=ExtResource("2_78p46")]
+[node name="wall22" parent="MAP/walls"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.2074, 0.0740547, -1.48779)
+script = null
 
-[node name="wall24" parent="MAP/walls" instance=ExtResource("2_78p46")]
+[node name="wall24" parent="MAP/walls"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.2074, 0.0740547, -5.48779)
+script = null
 
-[node name="wall25" parent="MAP/walls" instance=ExtResource("2_78p46")]
+[node name="wall25" parent="MAP/walls"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.2074, 0.0740547, -9.48779)
+script = null
 
-[node name="wall26" parent="MAP/walls" instance=ExtResource("2_78p46")]
+[node name="wall26" parent="MAP/walls"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.2074, 0.0740547, -13.4878)
+script = null
 
-[node name="wall27" parent="MAP/walls" instance=ExtResource("2_78p46")]
+[node name="wall27" parent="MAP/walls"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 15.2074, 0.0740547, -15.4878)
+script = null
 
-[node name="wall28" parent="MAP/walls" instance=ExtResource("2_78p46")]
+[node name="wall28" parent="MAP/walls"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 19.2074, 0.0740547, -15.4878)
+script = null
 
-[node name="wall29" parent="MAP/walls" instance=ExtResource("2_78p46")]
+[node name="wall29" parent="MAP/walls"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 23.2074, 0.0740547, -15.4878)
+script = null
 
-[node name="wall23" parent="MAP/walls" instance=ExtResource("2_78p46")]
+[node name="wall23" parent="MAP/walls"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 1.76678, 0.0740547, 6.86585)
+script = null
 
 [node name="window wall3" parent="MAP/walls" instance=ExtResource("3_ucbwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8836, 0.0740547, -11.291)
@@ -203,8 +288,9 @@ stream = SubResource("AudioStreamOggVorbis_ya0i2")
 volume_db = -18.739
 bus = &"Footsteps"
 
-[node name="CameraObject" parent="Player" instance=ExtResource("9_slhti")]
+[node name="CameraObject" parent="Player" groups=["camera"] instance=ExtResource("9_slhti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.357803, 1.29181, -0.542487)
+visible = false
 
 [node name="Model" type="Node3D" parent="Player"]
 
@@ -231,32 +317,122 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.481, 28)
 [node name="window3" parent="." instance=ExtResource("3_ucbwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.481, 28)
 
-[node name="wall2" parent="." instance=ExtResource("2_78p46")]
+[node name="wall2" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, 0.481, 28)
+script = null
 
-[node name="wall6" parent="." instance=ExtResource("2_78p46")]
+[node name="wall6" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, 0.481, 28)
+script = null
 
-[node name="wall3" parent="." instance=ExtResource("2_78p46")]
+[node name="wall3" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8, 0.481, 28)
+script = null
 
-[node name="wall4" parent="." instance=ExtResource("2_78p46")]
+[node name="wall4" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0.480594, 27)
+script = null
 
-[node name="wall5" parent="." instance=ExtResource("2_78p46")]
+[node name="wall5" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0.480594, 25)
+script = null
 
-[node name="wall7" parent="." instance=ExtResource("2_78p46")]
+[node name="wall7" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0.480594, 23)
+script = null
 
-[node name="wall8" parent="." instance=ExtResource("2_78p46")]
+[node name="wall8" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0.480594, 23)
+script = null
 
-[node name="wall9" parent="." instance=ExtResource("2_78p46")]
+[node name="wall9" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0.480594, 25)
+script = null
 
-[node name="wall10" parent="." instance=ExtResource("2_78p46")]
+[node name="wall10" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0.480594, 27)
+script = null
 
 [node name="pillar" parent="." instance=ExtResource("13_gnslx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.372246, 22)
@@ -347,6 +523,97 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 16)
 
 [node name="standingLight" parent="." instance=ExtResource("18_a0i7n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2799, 0.495351, 26.2413)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="wall11" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, 0.481, 28)
+
+[node name="wall13" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0.481, 28)
+
+[node name="wall14" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 27)
+
+[node name="wall15" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 25)
+
+[node name="wall16" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 23)
+
+[node name="wall24" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 21)
+
+[node name="wall25" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 19)
+
+[node name="wall26" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 17)
+
+[node name="wall33" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 15)
+
+[node name="wall12" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 0.481, 28)
+
+[node name="wall17" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 27)
+
+[node name="wall18" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 25)
+
+[node name="wall19" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 23)
+
+[node name="wall27" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 9, 0.481, 20)
+
+[node name="wall30" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 9, 0.481, 20)
+
+[node name="wall31" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 7, 0.481, 20)
+
+[node name="wall28" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 19)
+
+[node name="wall32" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 21)
+
+[node name="wall29" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 17)
+
+[node name="wall34" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 15)
+
+[node name="wall20" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 12, 0.481, 22)
+
+[node name="wall21" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 10, 0.481, 22)
+
+[node name="wall22" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 6, 0.481, 22)
+
+[node name="wall23" parent="Walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 4, 0.481, 22)
+
+[node name="CameraCopy" parent="." groups=["fakeCam"] instance=ExtResource("9_slhti")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.9522, 1.57994, 26.9489)
+script = null
+
+[node name="Area3D" type="Area3D" parent="CameraCopy"]
+transform = Transform3D(-4.37114e-06, 0, -100, 0, 100, 0, 100, 0, -4.37114e-06, 0.0380459, -0.0927926, -0.0207233)
+script = ExtResource("19_3wx7p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraCopy/Area3D"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -4.43757e-05, -0.00149784, -0.000496745)
+shape = SubResource("BoxShape3D_bmhe0")
+
+[node name="Prompt" type="Sprite3D" parent="CameraCopy/Area3D"]
+transform = Transform3D(-0.005, 0, -7.54979e-10, 0, 0.005, 0, 7.54979e-10, 0, -0.005, 0, 0.00880121, 0)
+visible = false
+texture = ExtResource("19_0r2rh")
 
 [connection signal="timeout" from="MAP/weather/flashDuration" to="MAP/weather" method="_on_timer_timeout"]
 [connection signal="timeout" from="MAP/weather/soundDelay" to="MAP/weather" method="_on_sound_delay_timeout"]
