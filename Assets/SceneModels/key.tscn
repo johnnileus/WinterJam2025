@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkljkuxe1mvok"]
+
+[ext_resource type="PackedScene" uid="uid://dlw2qjwxeaxdd" path="res://Assets/BaseModels/key/key.glb" id="1_qwrub"]
+
+[node name="key" instance=ExtResource("1_qwrub")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
