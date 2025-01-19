@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnoxnd1m41rcw"]
+
+[ext_resource type="PackedScene" uid="uid://bi7rsm7hh8qoi" path="res://Assets/BaseModels/low-poly_door/scene.gltf" id="1_6l6ev"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8hfe4"]
+size = Vector3(1.2832, 2.17664, 0.150391)
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_6l6ev")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+
+[node name="Cube_Frame_0" parent="Sketchfab_model/PortalDoor_fbx/RootNode/Cube" index="0"]
+transform = Transform3D(0.999995, 0.0012856, 0.00290076, -0.00128981, 0.999998, 0.00145329, -0.00289889, -0.00145702, 0.999995, 0.00244369, 0.00208683, 0.00193763)
+
+[node name="Cube_001_Door_0" parent="Sketchfab_model/PortalDoor_fbx/RootNode/Cube_001" index="0"]
+transform = Transform3D(0.999995, 0.0012856, 0.00290076, -0.00128981, 0.999998, 0.00145329, -0.00289889, -0.00145702, 0.999995, 0.00244369, 0.00208683, 0.00193763)
+
+[node name="Cube_006_Latch_0" parent="Sketchfab_model/PortalDoor_fbx/RootNode/Cube_006" index="0"]
+transform = Transform3D(0.999995, 0.0012856, 0.00290076, -0.00128981, 0.999998, 0.00145329, -0.00289889, -0.00145702, 0.999995, -0.00147808, -0.00137129, -0.00141764)
+
+[node name="Cube_007__0" parent="Sketchfab_model/PortalDoor_fbx/RootNode/Cube_007" index="0"]
+transform = Transform3D(0.999995, 0.0012856, 0.00290076, -0.00128981, 0.999998, 0.00145329, -0.00289889, -0.00145702, 0.999995, -0.00103045, -0.00121161, -0.00156403)
+
+[node name="Cube_002_Latch_0" parent="Sketchfab_model/PortalDoor_fbx/RootNode/Cube_002" index="0"]
+transform = Transform3D(0.999995, 0.0012856, 0.00290076, -0.00128981, 0.999998, 0.00145329, -0.00289889, -0.00145702, 0.999995, -0.00103045, -0.00121161, -0.00156403)
+
+[node name="Cube_003_Latch_0" parent="Sketchfab_model/PortalDoor_fbx/RootNode/Cube_003" index="0"]
+transform = Transform3D(0.999995, 0.00128981, -0.00289889, -0.0012856, 0.999998, 0.00145702, 0.00290076, -0.00145329, 0.999995, -0.00128758, 0.00121123, -0.00127244)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(0.999995, 0.00290076, -0.0012856, -0.00289889, 0.999995, 0.00145702, 0.00128981, -0.00145329, 0.999998, -2.13385e-05, 1.10268, -0.000292341)
+shape = SubResource("BoxShape3D_8hfe4")
