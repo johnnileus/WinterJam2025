@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bnti6iutyi7in"]
+[gd_scene load_steps=26 format=4 uid="uid://bnti6iutyi7in"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_mxea4"]
 [ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_h8avp"]
@@ -11,7 +11,6 @@
 [ext_resource type="AudioStream" uid="uid://d3vsl5me4n2f" path="res://Assets/Sounds/weather/rain-sound-188158.mp3" id="7_dftqf"]
 [ext_resource type="AudioStream" uid="uid://dddcparp5kb35" path="res://Assets/Sounds/weather/most-stormy-howling-wind-110211.mp3" id="8_53d1l"]
 [ext_resource type="Script" path="res://Scenes/textHandler.gd" id="9_f5h35"]
-[ext_resource type="PackedScene" uid="uid://cgjfrarstvg0t" path="res://Items/testParrot3D.tscn" id="11_86rf5"]
 
 [sub_resource type="Environment" id="Environment_n3s7m"]
 background_mode = 2
@@ -384,9 +383,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4524, 1.95093, -5.17996)
 transform = Transform3D(1, 7.91926e-05, 0.000235628, -0.000235596, -0.000460881, 1, 7.92871e-05, -1, -0.000460865, 0, 1.36198, 0)
 cast_shadow = 3
 mesh = SubResource("TorusMesh_elsnc")
-
-[node name="TestParrot3d" parent="." instance=ExtResource("11_86rf5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2289, 3.75382, 2.84455)
 
 [connection signal="area_entered" from="Player/Area3D" to="Player" method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Player/Area3D" to="Player" method="_on_area_3d_body_entered"]
