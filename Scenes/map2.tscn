@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://b3ai31csywm8p"]
+[gd_scene load_steps=32 format=4 uid="uid://b3ai31csywm8p"]
 
 [ext_resource type="Script" path="res://Scripts/lightningController.gd" id="1_q1dde"]
 [ext_resource type="AudioStream" uid="uid://c1w502aq6jql4" path="res://Assets/Sounds/weather/big-thunder-clap-99753.mp3" id="2_lw0g2"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://pickup.gd" id="19_6od7y"]
 [ext_resource type="PackedScene" uid="uid://b5xuxkkvhy2bt" path="res://Scenes/dangly_key.tscn" id="20_ajwcx"]
 [ext_resource type="Texture2D" uid="uid://cvqjiwofxm8e" path="res://Assets/KBM Prompts/T_Mouse_Left_Key_Dark.png" id="20_wxyuh"]
+[ext_resource type="Script" path="res://Scripts/pickupkey.gd" id="21_bmopy"]
 
 [sub_resource type="Sky" id="Sky_d7u4p"]
 
@@ -93,7 +94,7 @@ spot_angle = 17.57
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="MAP/lights"]
 transform = Transform3D(0.904759, 0.411664, -0.109287, 0.182613, -0.143116, 0.972713, 0.38479, -0.900028, -0.204661, -0.0505848, 24.5143, 28.9198)
-light_energy = 0.0
+light_energy = 1.558
 shadow_enabled = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="MAP/lights"]
@@ -381,8 +382,23 @@ transform = Transform3D(-0.005, 0, -7.54979e-10, 0, 0.005, 0, 7.54979e-10, 0, -0
 visible = false
 texture = ExtResource("20_wxyuh")
 
-[node name="danglyKey" parent="." instance=ExtResource("20_ajwcx")]
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="danglyKey" parent="Node3D" instance=ExtResource("20_ajwcx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05504, 0.52928, 17.7081)
+
+[node name="Area3D" type="Area3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-06, 0, -100, 0, 100, 0, 100, 0, -4.37114e-06, 9.09473, 1.22759, 17.6898)
+script = ExtResource("21_bmopy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.000779763, -0.00149784, -0.000496745)
+shape = SubResource("BoxShape3D_bmhe0")
+
+[node name="Prompt" type="Sprite3D" parent="Node3D/Area3D"]
+transform = Transform3D(-0.005, 0, -7.54979e-10, 0, 0.005, 0, 7.54979e-10, 0, -0.005, 0, 0.00880121, 0)
+visible = false
+texture = ExtResource("20_wxyuh")
 
 [connection signal="timeout" from="MAP/weather/flashDuration" to="MAP/weather" method="_on_timer_timeout"]
 [connection signal="timeout" from="MAP/weather/soundDelay" to="MAP/weather" method="_on_sound_delay_timeout"]
