@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@export var inventory : Inventory
+
 var isRunning
 var lockedMovement: bool = false
 var moving
@@ -23,6 +25,7 @@ var prevFootstepProgress = 0
 
 @onready var pivot = $pivot
 @onready var camera = $pivot/cameraNode/camera
+@onready var camera_node = $pivot/cameraNode
 
 @onready var footstepAudioPlayer = $"Footstep Audio"
 
@@ -32,7 +35,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	loadFootsteps()
 	print(visionLight)
-		
+	inventory.visible = not inventory.visible
 	
 func loadFootsteps():
 	var steps = DirAccess.get_files_at(footstepFilepath)
@@ -100,7 +103,7 @@ func _physics_process(delta):
 		moving = false
 	
 	var target = GetBobOffset(Time.get_unix_time_from_system(), isRunning) * (velocity.length() / speed) * float(is_on_floor())
-	camera.transform.origin = lerp(camera.transform.origin, target, .1)
+	camera_node.transform.origin = lerp(camera_node.transform.origin, target, .1)
 	
 	## play footsteps
 	if moving:
@@ -119,10 +122,20 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("inventory"):
+		inventory.visible = not inventory.visible
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_timer_timeout():
 	pass # Replace with function body.
 	
-func _on_player_interaction():
-	emit_signal("object_selected", "res://Assets/SceneModels/ballmaze.blend")
+func _on_area_3d_body_entered(body):
+	if body in get_tree().get_nodes_in_group("items"):
+		self.inventory.add_item(body as Item, 1)
+
+func _on_area_3d_area_entered(area):
+	if area in get_tree().get_nodes_in_group("items"):
+		self.inventory.add_item(area as Item, 1)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgjfrarstvg0t"]
+
+[ext_resource type="Script" path="res://Scripts/item.gd" id="1_5h53m"]
+[ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_r57v3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wcog5"]
+size = Vector3(8.82641, 5.46156, 1.1145)
+
+[node name="TestParrot3d" type="Area3D"]
+script = ExtResource("1_5h53m")
+item_name = "Parrot"
+icon = ExtResource("2_r57v3")
+is_stackable = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("2_r57v3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0475826, -0.00562286, 0.060669)
+shape = SubResource("BoxShape3D_wcog5")
