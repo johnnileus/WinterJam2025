@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@export var inventory : Inventory
+
 var isRunning
 var lockedMovement: bool = false
 var moving
@@ -34,7 +36,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	loadFootsteps()
 	print(visionLight)
-		
+	inventory.visible = not inventory.visible
 	
 func loadFootsteps():
 	var steps = DirAccess.get_files_at(footstepFilepath)
@@ -121,7 +123,20 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("inventory"):
+		inventory.visible = not inventory.visible
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_timer_timeout():
 	pass # Replace with function body.
+	
+func _on_area_3d_body_entered(body):
+	if body in get_tree().get_nodes_in_group("items"):
+		self.inventory.add_item(body as Item, 1)
+
+func _on_area_3d_area_entered(area):
+	if area in get_tree().get_nodes_in_group("items"):
+		self.inventory.add_item(area as Item, 1)
