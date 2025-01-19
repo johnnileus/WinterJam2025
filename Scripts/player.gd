@@ -35,7 +35,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	loadFootsteps()
 	print(visionLight)
-		
+	inventory.visible = not inventory.visible
 	
 func loadFootsteps():
 	var steps = DirAccess.get_files_at(footstepFilepath)

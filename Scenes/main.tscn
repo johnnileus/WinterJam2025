@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=4 uid="uid://bnti6iutyi7in"]
+[gd_scene load_steps=26 format=4 uid="uid://bnti6iutyi7in"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_mxea4"]
 [ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_h8avp"]
 [ext_resource type="PackedScene" uid="uid://cde0kyfdxi85r" path="res://Scenes/camera.tscn" id="2_xar5k"]
 [ext_resource type="PackedScene" uid="uid://b0mbmbsla8i0k" path="res://Assets/SceneModels/window_wall.tscn" id="3_37l1r"]
+[ext_resource type="PackedScene" uid="uid://beh7fqcp1w553" path="res://Inventory/inventory.tscn" id="3_n6ov6"]
 [ext_resource type="PackedScene" uid="uid://ce8b58khybcxj" path="res://Assets/SceneModels/wall.tscn" id="4_ahn2y"]
 [ext_resource type="Script" path="res://Scripts/lightningController.gd" id="5_6i1a6"]
 [ext_resource type="AudioStream" uid="uid://c1w502aq6jql4" path="res://Assets/Sounds/weather/big-thunder-clap-99753.mp3" id="6_65ulx"]
@@ -69,9 +70,10 @@ size = Vector3(0.323486, 0.346436, 0.329712)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n3s7m")
 
-[node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
+[node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("inventory") groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.37147, 0.840972, 18.8101)
 script = ExtResource("1_mxea4")
+inventory = NodePath("CanvasLayer/Inventory")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -107,6 +109,17 @@ layers = 2
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_7olxr")
 skeleton = NodePath("../..")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="Inventory" parent="Player/CanvasLayer" instance=ExtResource("3_n6ov6")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MAP" type="Node3D" parent="."]
 

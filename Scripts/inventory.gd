@@ -24,6 +24,12 @@ func _ready():
 		slot.slot_hovered.connect(self._on_slot_hovered)
 	tooltip.visible = false
 
+func _process(delta):
+	tooltip.global_position = get_global_mouse_position() + Vector2.ONE * 8
+	if selected_item:
+		tooltip.visible = false
+		selected_item.global_position = get_global_mouse_position()
+
 func _on_slot_input(which: InventorySlot, action:InventorySlot.InventorySlotAction):
 	print(action)
 	if not selected_item:
@@ -41,12 +47,6 @@ func _on_slot_hovered(which: InventorySlot, is_hovering: bool):
 	elif which.hint_item:
 		tooltip.set_text(which.hint_item.item_name)
 		tooltip.visible = is_hovering
-
-func _process(delta):
-	tooltip.global_position = get_global_mouse_position() + Vector2.ONE * 8
-	if selected_item:
-		tooltip.visible = false
-		selected_item.global_position = get_global_mouse_position()
 
 func add_item(item: Item, amount: int) -> void:
 	var _item: InventoryItem = inventory_item_scene.instantiate()
