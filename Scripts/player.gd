@@ -7,7 +7,6 @@ var moving
 var footstepFilepath = "res://Assets/Sounds/Footsteps/wood/"
 var footstepSounds = []
 
-
 const WalkSpeed = 2
 const RunSpeed = 3.5
 const JumpVelocity = 4.5
@@ -124,3 +123,6 @@ func _process(delta):
 
 func _on_timer_timeout():
 	pass # Replace with function body.
+	
+func _on_player_interaction():
+	emit_signal("object_selected", "res://Assets/SceneModels/ballmaze.blend")
