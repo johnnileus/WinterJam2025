@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dtp3rv0tihwvx"
+path.s3tc="res://.godot/imported/carpet_dirty_carpet_nor_gl_1k.jpg-8fe05ce8bad4bd829af0f3b24f545e20.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "9b4e28207017e6cc9677b4798f64dcdd"
+}
+
+[deps]
+
+source_file="res://Assets/BaseModels/carpet/carpet_dirty_carpet_nor_gl_1k.jpg"
+dest_files=["res://.godot/imported/carpet_dirty_carpet_nor_gl_1k.jpg-8fe05ce8bad4bd829af0f3b24f545e20.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Assets/BaseModels/carpet/carpet_dirty_carpet_nor_gl_1k.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

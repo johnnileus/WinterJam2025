@@ -1,72 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0mbmbsla8i0k"]
+[gd_scene load_steps=3 format=3 uid="uid://b0mbmbsla8i0k"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_b6wv7"]
-size = Vector3(4.28979, 11.0336, 0.117554)
+[ext_resource type="PackedScene" uid="uid://cw7budeafs1xf" path="res://Assets/BaseModels/window/window.glb" id="1_3c6d6"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_6v8j1"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cf0id"]
+size = Vector3(2.00586, 3.89355, 0.496094)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mp6jp"]
-albedo_color = Color(0.610904, 0.43893, 0.246887, 1)
+[node name="window" instance=ExtResource("1_3c6d6")]
 
-[node name="window wall" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.044, 0.5, 28.647)
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00556159, 1.93601, -0.000472069)
+shape = SubResource("BoxShape3D_cf0id")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0262451, 5.01682, 0.012146)
-shape = SubResource("BoxShape3D_b6wv7")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.336994, 0, 0, 0, 10.5916, 0, 0, 0, 0.1, 0.0138807, 5.26776, 0.0165997)
-mesh = SubResource("BoxMesh_6v8j1")
-skeleton = NodePath("../StaticBody3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_mp6jp")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.22005, 0, 0, 0, 1.1618, 0, 0, 0, 0.1, 0.0138807, 0.553339, 0.0165997)
-mesh = SubResource("BoxMesh_6v8j1")
-skeleton = NodePath("../StaticBody3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_mp6jp")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.22005, 0, 0, 0, 1.1618, 0, 0, 0, 0.1, 0.0138807, 10.0012, 0.0165997)
-mesh = SubResource("BoxMesh_6v8j1")
-skeleton = NodePath("../StaticBody3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_mp6jp")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.22005, 0, 0, 0, 0.207892, 0, 0, 0, 0.1, 0.0138807, 6.69658, 0.0165997)
-mesh = SubResource("BoxMesh_6v8j1")
-skeleton = NodePath("../StaticBody3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_mp6jp")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.19148, 0.433181, 0, -1.19148, 0.433181, 0, 0, 0, 0.1, 1.40469, 9.46605, 0.0165997)
-mesh = SubResource("BoxMesh_6v8j1")
-skeleton = NodePath("../StaticBody3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_mp6jp")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.19148, -0.433181, 0, 1.19148, 0.433181, 0, 0, 0, 0.1, -1.39803, 9.44147, 0.0165997)
-mesh = SubResource("BoxMesh_6v8j1")
-skeleton = NodePath("../StaticBody3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_mp6jp")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.22005, 0, 0, 0, 0.207892, 0, 0, 0, 0.1, 0.0138807, 3.73382, 0.0165997)
-mesh = SubResource("BoxMesh_6v8j1")
-skeleton = NodePath("../StaticBody3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_mp6jp")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.336994, 0, 0, 0, 10.5916, 0, 0, 0, 0.1, 2.01388, 5.26776, 0.0165997)
-mesh = SubResource("BoxMesh_6v8j1")
-skeleton = NodePath("../StaticBody3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_mp6jp")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.336994, 0, 0, 0, 10.5916, 0, 0, 0, 0.1, -1.98612, 5.26776, 0.0165997)
-mesh = SubResource("BoxMesh_6v8j1")
-skeleton = NodePath("../StaticBody3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_mp6jp")
+[node name="Sprite3D" type="Sprite3D" parent="." index="2"]
