@@ -44,7 +44,7 @@ func _process(delta):
 	camera_3d.global_rotation.y = item_pivot.global_rotation.y
 
 	global_position = newPos
-	camera_3d.global_position = newPos
+	camera_3d.global_position = newPos - camera_3d.basis.z * Vector3(0,0,0.1)
 
 
 	if active && !onCooldown:

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbqo3ap5xx0ss"]
+
+[ext_resource type="PackedScene" uid="uid://m3b1svheb510" path="res://Assets/BaseModels/Camera.glb" id="1_85ppx"]
+
+[node name="Camera" instance=ExtResource("1_85ppx")]
+
+[node name="Camera_mesh" parent="." index="0"]
+layers = 2
+cast_shadow = 0

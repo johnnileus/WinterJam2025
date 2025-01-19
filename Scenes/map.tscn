@@ -82,110 +82,6 @@ shape = SubResource("BoxShape3D_1bknx")
 
 [node name="walls" type="Node3D" parent="MAP"]
 
-[node name="wall22" parent="MAP/walls"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.2074, 0.0740547, -1.48779)
-script = null
-
-[node name="wall24" parent="MAP/walls"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.2074, 0.0740547, -5.48779)
-script = null
-
-[node name="wall25" parent="MAP/walls"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.2074, 0.0740547, -9.48779)
-script = null
-
-[node name="wall26" parent="MAP/walls"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.2074, 0.0740547, -13.4878)
-script = null
-
-[node name="wall27" parent="MAP/walls"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 15.2074, 0.0740547, -15.4878)
-script = null
-
-[node name="wall28" parent="MAP/walls"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 19.2074, 0.0740547, -15.4878)
-script = null
-
-[node name="wall29" parent="MAP/walls"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 23.2074, 0.0740547, -15.4878)
-script = null
-
-[node name="wall23" parent="MAP/walls"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 1.76678, 0.0740547, 6.86585)
-script = null
-
 [node name="window wall3" parent="MAP/walls" instance=ExtResource("3_ucbwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8836, 0.0740547, -11.291)
 
@@ -200,19 +96,17 @@ spot_range = 61.654
 spot_attenuation = -0.47
 spot_angle = 17.57
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="MAP/lights"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 9.42805, 0.469432, 22.6531)
-light_color = Color(0.867157, 0.910116, 0, 1)
-light_energy = 0.04
-spot_range = 14.8393
-spot_attenuation = 0.0
-spot_angle = 90.0
-spot_angle_attenuation = 4.9576e-05
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="MAP/lights"]
 transform = Transform3D(0.904759, 0.411664, -0.109287, 0.182613, -0.143116, 0.972713, 0.38479, -0.900028, -0.204661, -0.0460739, 24.4641, 29.0019)
 light_energy = 0.0
 shadow_enabled = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MAP/lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01672, 1.58782, 25.2332)
+light_color = Color(1, 1, 0.498039, 1)
+light_energy = 0.1
+shadow_enabled = true
+omni_range = 6.235
 
 [node name="weather" type="Node3D" parent="MAP"]
 script = ExtResource("4_c8fks")
@@ -277,10 +171,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00951862, 1.5, -0.0193906)
 [node name="camera" type="Camera3D" parent="Player/pivot/cameraNode"]
 
 [node name="itemPivot" type="Node3D" parent="Player/pivot/cameraNode"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.551797, -0.21991, -0.679478)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.551797, -0.21991, -0.816851)
 
 [node name="closePivot" type="Node3D" parent="Player/pivot/cameraNode"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0187845, -0.0243256, -0.322328)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0187845, -0.0243256, -0.499554)
 
 [node name="Footstep Audio" type="AudioStreamPlayer3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.135834, -0.519816, -0.0349369)
@@ -316,123 +210,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.481, 28)
 
 [node name="window3" parent="." instance=ExtResource("3_ucbwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.481, 28)
-
-[node name="wall2" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, 0.481, 28)
-script = null
-
-[node name="wall6" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, 0.481, 28)
-script = null
-
-[node name="wall3" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8, 0.481, 28)
-script = null
-
-[node name="wall4" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0.480594, 27)
-script = null
-
-[node name="wall5" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0.480594, 25)
-script = null
-
-[node name="wall7" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0.480594, 23)
-script = null
-
-[node name="wall8" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0.480594, 23)
-script = null
-
-[node name="wall9" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0.480594, 25)
-script = null
-
-[node name="wall10" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0.480594, 27)
-script = null
 
 [node name="pillar" parent="." instance=ExtResource("13_gnslx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.372246, 22)
@@ -499,6 +276,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.095
 
 [node name="bookshelf" parent="." instance=ExtResource("15_olb1q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22351, 0.495351, 27.4362)
+
+[node name="bookshelf2" parent="." instance=ExtResource("15_olb1q")]
+transform = Transform3D(-2.62072e-08, 0.340642, -0.940193, 1, -4.37114e-08, -4.37114e-08, -5.59871e-08, -0.940193, -0.340642, 3.50275, 1.11597, 24.929)
 
 [node name="book" parent="." instance=ExtResource("16_eshht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.67938, 0.872049, 27.3655)
