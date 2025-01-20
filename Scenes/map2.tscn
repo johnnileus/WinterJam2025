@@ -93,8 +93,8 @@ spot_attenuation = -0.47
 spot_angle = 17.57
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="MAP/lights"]
-transform = Transform3D(0.904759, 0.411664, -0.109287, 0.182613, -0.143116, 0.972713, 0.38479, -0.900028, -0.204661, -0.0505848, 24.5143, 28.9198)
-light_energy = 1.558
+transform = Transform3D(0.904759, 0.411664, -0.109287, 0.182613, -0.143116, 0.972713, 0.38479, -0.900028, -0.204661, -0.0298438, 24.5057, 28.9246)
+light_energy = 0.0
 shadow_enabled = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="MAP/lights"]

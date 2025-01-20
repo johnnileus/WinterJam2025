@@ -52,7 +52,7 @@ func _process(delta):
 			flash.visible = true
 			flash_timer.start()
 			counter+= 1
-			if counter % 7 == 0:
+			if counter % 4 == 0:
 				spookyshadow.visible = true
 
 
