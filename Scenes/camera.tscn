@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cde0kyfdxi85r"]
+[gd_scene load_steps=7 format=3 uid="uid://cde0kyfdxi85r"]
 
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_o57es"]
 [ext_resource type="Texture2D" uid="uid://dv6ypdpy0nlf0" path="res://Assets/spotlightProjector.png" id="2_dxw20"]
 [ext_resource type="AudioStream" uid="uid://ckp6f8boo87r4" path="res://Assets/Sounds/camera-shutter-187326.mp3" id="3_rn188"]
-[ext_resource type="PackedScene" path="res://Assets/SceneModels/camera.tscn" id="4_dky0c"]
+[ext_resource type="PackedScene" uid="uid://dbqo3ap5xx0ss" path="res://Assets/SceneModels/camera.tscn" id="4_dky0c"]
+[ext_resource type="Texture2D" uid="uid://bnuwf8riw0wjd" path="res://Assets/spookyghost.png" id="5_5va28"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ryah1"]
 viewport_path = NodePath("SubViewport")
@@ -48,6 +49,13 @@ pitch_scale = 0.7
 
 [node name="Camera" parent="model" instance=ExtResource("4_dky0c")]
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0.063428, -0.141696, 0.129977)
+
+[node name="spookyshadow" type="Sprite3D" parent="."]
+transform = Transform3D(0.0431751, 0, 0, 0, 0.0590488, 0, 0, 0, 1, 0.482671, -0.205353, -1.59955)
+visible = false
+cast_shadow = 3
+alpha_cut = 2
+texture = ExtResource("5_5va28")
 
 [connection signal="timeout" from="flashTimer" to="." method="_on_flash_length_timeout"]
 [connection signal="timeout" from="renderDelay" to="." method="_on_render_delay_timeout"]
