@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dhhxijntwokmg"
-valid=false
+path="res://.godot/imported/ballmaze.blend-c223a972f17052ff4892278effb34d4e.scn"
 
 [deps]
 
 source_file="res://Assets/SceneModels/ballmaze.blend"
+dest_files=["res://.godot/imported/ballmaze.blend-c223a972f17052ff4892278effb34d4e.scn"]
 
 [params]
 

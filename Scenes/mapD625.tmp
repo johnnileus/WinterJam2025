@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://ccrw5binp6s5o"]
+[gd_scene load_steps=46 format=4 uid="uid://ccrw5binp6s5o"]
 
 [ext_resource type="PackedScene" uid="uid://b0mbmbsla8i0k" path="res://Assets/SceneModels/window_wall.tscn" id="3_ucbwl"]
 [ext_resource type="Script" path="res://Scripts/lightningController.gd" id="4_c8fks"]
@@ -35,9 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://krb0nvnctn77" path="res://Assets/KBM Prompts/T_9_Key_Dark.png" id="33_wckjf"]
 [ext_resource type="Texture2D" uid="uid://c3wsv4o5isqf5" path="res://Assets/KBM Prompts/T_0_Key_Dark.png" id="34_em65o"]
 [ext_resource type="Script" path="res://keypad.gd" id="35_fh14p"]
-[ext_resource type="Texture2D" uid="uid://birh84b84vfx" path="res://Assets/BaseModels/keypad/keypad_leather_red_03_coll1_1k.jpg" id="36_2kcn7"]
-[ext_resource type="Texture2D" uid="uid://guc2veb0xevq" path="res://Assets/BaseModels/keypad/keypad_leather_red_03_rough_1k.png" id="37_5it3k"]
-[ext_resource type="Texture2D" uid="uid://dibkwoagp5xjr" path="res://Assets/BaseModels/keypad/keypad_leather_red_03_nor_gl_1k.jpg" id="38_jvoqf"]
 
 [sub_resource type="Sky" id="Sky_d7u4p"]
 
@@ -82,97 +79,6 @@ packet_sequence = SubResource("OggPacketSequence_wih66")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bmhe0"]
 size = Vector3(0.454224, 1.71161, 0.815948)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7wlr"]
-resource_name = "Material.003"
-cull_mode = 2
-albedo_texture = ExtResource("36_2kcn7")
-metallic_texture = ExtResource("37_5it3k")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("37_5it3k")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_texture = ExtResource("38_jvoqf")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_avfmx"]
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 2, 2),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAHAAMAAgAGAAcABgAFAAcABgAEAAUABAABAAUABAAAAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
-"name": "Material.003",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/////AAAAAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_tyooy"]
-resource_name = "keypad_Cube_001"
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 2, 2),
-"attribute_data": PackedByteArray("/x//P/9fAAD/X////58AAP+f////3/8//x//f/9f/7//X/+//5//v/+f/7//3/9//1//P/9f/z//X/8//5//P/+f/z//n/8//1//f/9f/3//X/9//5//f/+f/3//n/9/"),
-"format": 34896613399,
-"index_count": 36,
-"index_data": PackedByteArray("AgAJAAQAAgAHAAkACAAVAAoACAATABUAFAARABcAFAAOABEADQADAA8ADQABAAMABgAMABIABgAAAAwAFgAFAAsAFgAQAAUA"),
-"material": SubResource("StandardMaterial3D_c7wlr"),
-"name": "Material.003",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("AAAAAP///78AAAAA////vwAAAAD//1TVAAD//////78AAP////9U1QAA////////AAAAAAAA/78AAAAAAABU1QAAAAAAAP//AAD//wAAVNUAAP//AAD//wAA//8AAP////8AAP///7///wAA////v///AAD//1TV/////////7///////////////////1TV//8AAAAA/7///wAAAAD/////AAAAAFTV/////wAA////////AAD///////8AAFTVAAD/f/////9U1VTV/////1TVVNX/f/+/AAD/f1TVVNX/v/+/VNVU1f+//7//f/+/AAD/f/////+qKqoq//////9//7+qKqoqAAD/f/+//7+qKqoq/7//v/9//7+qKqoq")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_avfmx")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owg2l"]
-albedo_color = Color(0, 0.56115, 0.154037, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ad7i8"]
-size = Vector3(1, 2.16296, 2.21355)
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_xym66"]
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 2, 2),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAHAAMAAgAGAAcABgAFAAcABgAEAAUABAABAAUABAAAAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
-"name": "Material.003",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/////AAAAAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_4h1od"]
-resource_name = "keypad_Cube_001"
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 2, 2),
-"attribute_data": PackedByteArray("/x//P/9fAAD/X////58AAP+f////3/8//x//f/9f/7//X/+//5//v/+f/7//3/9//1//P/9f/z//X/8//5//P/+f/z//n/8//1//f/9f/3//X/9//5//f/+f/3//n/9/"),
-"format": 34896613399,
-"index_count": 36,
-"index_data": PackedByteArray("AgAJAAQAAgAHAAkACAAVAAoACAATABUAFAARABcAFAAOABEADQADAA8ADQABAAMABgAMABIABgAAAAwAFgAFAAsAFgAQAAUA"),
-"material": SubResource("StandardMaterial3D_c7wlr"),
-"name": "Material.003",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("AAAAAP///78AAAAA////vwAAAAD//1TVAAD//////78AAP////9U1QAA////////AAAAAAAA/78AAAAAAABU1QAAAAAAAP//AAD//wAAVNUAAP//AAD//wAA//8AAP////8AAP///7///wAA////v///AAD//1TV/////////7///////////////////1TV//8AAAAA/7///wAAAAD/////AAAAAFTV/////wAA////////AAD///////8AAFTVAAD/f/////9U1VTV/////1TVVNX/f/+/AAD/f1TVVNX/v/+/VNVU1f+//7//f/+/AAD/f/////+qKqoq//////9//7+qKqoqAAD/f/+//7+qKqoq/7//v/9//7+qKqoq")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_xym66")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0su4a"]
-size = Vector3(1, 2.16296, 2.21355)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrn7y"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bd6f5"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.659057, 0.186069, 0.234033, 1)
 
 [node name="map" type="Node3D"]
 
@@ -680,182 +586,12 @@ transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -4.43757e-05, -0.001
 shape = SubResource("BoxShape3D_bmhe0")
 
 [node name="Prompt" type="Sprite3D" parent="keypad/Area3D"]
-transform = Transform3D(0.003, 0, 8.27181e-25, 0, 0.003, 0, -8.27181e-25, 0, 0.003, -4.26322e-05, 0.00789565, 5.11035e-05)
+transform = Transform3D(0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, -4.26322e-05, 0.0071467, 5.11035e-05)
 visible = false
 texture = ExtResource("19_0r2rh")
 
 [node name="Camera3D" type="Camera3D" parent="keypad/Area3D"]
 transform = Transform3D(0.01, 0, 4.54747e-17, 0, 0.01, 0, -4.54747e-17, 0, 0.01, 0.000207171, 0.00209658, 0.00863689)
-
-[node name="Keys" type="Node3D" parent="keypad"]
-
-[node name="E2" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0395021, -0.000280619, 0.0859728)
-metadata/key_value = "E"
-
-[node name="Cube_003" type="MeshInstance3D" parent="keypad/Keys/E2"]
-transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, -0.0224085, 0.0373946, 0.0619555)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_owg2l")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/E2"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, -0.0249896, 0.0375888, 0.0772586)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="10" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.0373946, 0.00155354)
-metadata/key_value = "0"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_4h1od")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/10"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_0su4a")
-
-[node name="11" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.111804, 0.00155354)
-metadata/key_value = "8"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/11"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="12" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.111804, 0.0631523)
-metadata/key_value = "9"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/12"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/12"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="13" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.111804, -0.0600691)
-metadata/key_value = "7"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/13"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/13"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="C2" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.0374227, -0.0600691)
-metadata/key_value = "C"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/C2"]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.0417519, 0, 2.53635)
-material_override = SubResource("StandardMaterial3D_hrn7y")
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_bd6f5")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/C2"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="14" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.183434, -0.0600691)
-metadata/key_value = "4"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/14"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="15" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.183434, 0.00327778)
-metadata/key_value = "5"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/15"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/15"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="16" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.183434, 0.0633535)
-metadata/key_value = "6"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/16"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/16"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="17" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.255702, 0.0633535)
-metadata/key_value = "3"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/17"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/17"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="18" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.255702, 0.00333118)
-metadata/key_value = "2"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/18"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/18"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="19" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.255702, -0.0613174)
-metadata/key_value = "1"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/19"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/19"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00951, 1.89104, 3.34798)
-text = "You Win!!!"
-
-[node name="Label3D" type="Label3D" parent="Label3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000119209, -0.225586, 0.0090456)
-text = "(you can alt f4 now)"
-font_size = 20
 
 [connection signal="timeout" from="MAP/weather/flashDuration" to="MAP/weather" method="_on_timer_timeout"]
 [connection signal="timeout" from="MAP/weather/soundDelay" to="MAP/weather" method="_on_sound_delay_timeout"]
