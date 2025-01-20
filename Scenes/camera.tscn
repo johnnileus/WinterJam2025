@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_o57es"]
 [ext_resource type="Texture2D" uid="uid://dv6ypdpy0nlf0" path="res://Assets/spotlightProjector.png" id="2_dxw20"]
 [ext_resource type="AudioStream" uid="uid://ckp6f8boo87r4" path="res://Assets/Sounds/camera-shutter-187326.mp3" id="3_rn188"]
-[ext_resource type="PackedScene" uid="uid://dbqo3ap5xx0ss" path="res://Assets/SceneModels/camera.tscn" id="4_dky0c"]
+[ext_resource type="PackedScene" path="res://Assets/SceneModels/camera.tscn" id="4_dky0c"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ryah1"]
 viewport_path = NodePath("SubViewport")
