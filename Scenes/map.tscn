@@ -191,9 +191,6 @@ shape = SubResource("BoxShape3D_1bknx")
 
 [node name="walls" type="Node3D" parent="MAP"]
 
-[node name="window wall3" parent="MAP/walls" instance=ExtResource("3_ucbwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8836, 0.0740547, -11.291)
-
 [node name="lights" type="Node3D" parent="MAP"]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="MAP/lights"]
@@ -222,8 +219,8 @@ script = ExtResource("4_c8fks")
 lightPaths = [NodePath("SpotLight3D")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="MAP/weather"]
-transform = Transform3D(0.994155, -0.104861, -0.0256884, 0.0295193, 0.0351459, 0.998946, -0.103848, -0.993866, 0.0380359, 8.79715, 20.9742, 16.3568)
-light_energy = 0.01
+transform = Transform3D(0.820143, -0.420614, 0.387879, 0.30379, 0.894591, 0.327748, -0.484848, -0.150966, 0.861471, 20.7599, 8.92229, 48.6008)
+light_energy = 1.001
 shadow_enabled = true
 spot_range = 64.0062
 spot_attenuation = -1.07
@@ -399,19 +396,21 @@ transform = Transform3D(0.840266, 0.53537, 0.0856326, -0.532611, 0.844618, -0.05
 
 [node name="ceiling" parent="." instance=ExtResource("17_3xkdp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 24)
-visible = false
 
 [node name="ceiling2" parent="." instance=ExtResource("17_3xkdp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 24)
-visible = false
 
 [node name="ceiling3" parent="." instance=ExtResource("17_3xkdp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 16)
-visible = false
 
 [node name="ceiling4" parent="." instance=ExtResource("17_3xkdp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 16)
-visible = false
+
+[node name="ceiling5" parent="." instance=ExtResource("17_3xkdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 8)
+
+[node name="ceiling6" parent="." instance=ExtResource("17_3xkdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 8)
 
 [node name="standingLight" parent="." instance=ExtResource("18_a0i7n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2799, 0.495351, 26.2413)
