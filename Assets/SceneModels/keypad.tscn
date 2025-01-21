@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://672pkefyofnh"]
 
 [ext_resource type="PackedScene" uid="uid://bcuys83ytbo4t" path="res://Assets/BaseModels/keypad/keypad.glb" id="1_uagqt"]
-[ext_resource type="Script" path="res://Assets/SceneModels/keypadButtons.gd" id="2_du1ok"]
+[ext_resource type="Script" path="res://Scripts/keypadButtons.gd" id="2_du1ok"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wkfr"]
 albedo_color = Color(0.653864, 0.20363, 0.155115, 1)

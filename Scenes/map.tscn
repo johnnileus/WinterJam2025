@@ -1,11 +1,11 @@
-[gd_scene load_steps=59 format=4 uid="uid://ccrw5binp6s5o"]
+[gd_scene load_steps=57 format=4 uid="uid://ccrw5binp6s5o"]
 
 [ext_resource type="PackedScene" uid="uid://b0mbmbsla8i0k" path="res://Assets/SceneModels/window_wall.tscn" id="3_ucbwl"]
 [ext_resource type="Script" path="res://Scripts/lightningController.gd" id="4_c8fks"]
 [ext_resource type="AudioStream" uid="uid://c1w502aq6jql4" path="res://Assets/Sounds/weather/big-thunder-clap-99753.mp3" id="5_o6eih"]
 [ext_resource type="AudioStream" uid="uid://d3vsl5me4n2f" path="res://Assets/Sounds/weather/rain-sound-188158.mp3" id="6_k3pbo"]
 [ext_resource type="AudioStream" uid="uid://dddcparp5kb35" path="res://Assets/Sounds/weather/most-stormy-howling-wind-110211.mp3" id="7_3h6xx"]
-[ext_resource type="Script" path="res://Scripts/player.gd" id="8_sowaj"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/player.gd" id="8_sowaj"]
 [ext_resource type="PackedScene" uid="uid://beh7fqcp1w553" path="res://Inventory/inventory.tscn" id="9_sgorh"]
 [ext_resource type="PackedScene" uid="uid://cde0kyfdxi85r" path="res://Scenes/camera.tscn" id="9_slhti"]
 [ext_resource type="PackedScene" uid="uid://djvwurmmji0bl" path="res://Assets/SceneModels/table.tscn" id="10_jp13b"]
@@ -17,12 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://ce8b58khybcxj" path="res://Assets/SceneModels/wall.tscn" id="18_7gyks"]
 [ext_resource type="PackedScene" uid="uid://bvr5olw6gewks" path="res://Assets/SceneModels/standing_light.tscn" id="18_a0i7n"]
 [ext_resource type="Texture2D" uid="uid://cvqjiwofxm8e" path="res://Assets/KBM Prompts/T_Mouse_Left_Key_Dark.png" id="19_0r2rh"]
-[ext_resource type="Script" path="res://pickup.gd" id="19_3wx7p"]
-[ext_resource type="Texture2D" uid="uid://dmuuaug74idfq" path="res://Assets/Textures/CODE/T_3_Key_Dark.png" id="19_4p47u"]
-[ext_resource type="Texture2D" uid="uid://ch1fakuhoyjrm" path="res://Assets/Textures/CODE/T_1_Key_Dark.png" id="20_0tixy"]
-[ext_resource type="Texture2D" uid="uid://dt3nurtooxt3f" path="res://Assets/Textures/CODE/T_6_Key_Dark.png" id="21_yoelf"]
-[ext_resource type="Texture2D" uid="uid://b1ixqjtpl06qu" path="res://Assets/Textures/CODE/T_8_Key_Dark.png" id="22_5jnss"]
-[ext_resource type="PackedScene" uid="uid://bi7rsm7hh8qoi" path="res://Assets/BaseModels/low-poly_door/scene.gltf" id="23_jakge"]
+[ext_resource type="Script" path="res://Scripts/pickup.gd" id="19_3wx7p"]
+[ext_resource type="Texture2D" uid="uid://dmuuaug74idfq" path="res://Assets/Textures/keypad/T_3_Key_Dark.png" id="19_4p47u"]
+[ext_resource type="Texture2D" uid="uid://ch1fakuhoyjrm" path="res://Assets/Textures/keypad/T_1_Key_Dark.png" id="20_0tixy"]
+[ext_resource type="Texture2D" uid="uid://dt3nurtooxt3f" path="res://Assets/Textures/keypad/T_6_Key_Dark.png" id="21_yoelf"]
+[ext_resource type="Texture2D" uid="uid://b1ixqjtpl06qu" path="res://Assets/Textures/keypad/T_8_Key_Dark.png" id="22_5jnss"]
 [ext_resource type="PackedScene" uid="uid://672pkefyofnh" path="res://Assets/SceneModels/keypad.tscn" id="24_3sfyo"]
 [ext_resource type="Texture2D" uid="uid://4yp1lprtijr7" path="res://Assets/KBM Prompts/T_1_Key_Dark.png" id="25_bt3ql"]
 [ext_resource type="Texture2D" uid="uid://gllryv2f75cl" path="res://Assets/KBM Prompts/T_2_Key_Dark.png" id="26_k051a"]
@@ -34,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://wcavtwta1wem" path="res://Assets/KBM Prompts/T_8_Key_Dark.png" id="32_3h0vm"]
 [ext_resource type="Texture2D" uid="uid://krb0nvnctn77" path="res://Assets/KBM Prompts/T_9_Key_Dark.png" id="33_wckjf"]
 [ext_resource type="Texture2D" uid="uid://c3wsv4o5isqf5" path="res://Assets/KBM Prompts/T_0_Key_Dark.png" id="34_em65o"]
-[ext_resource type="Script" path="res://keypad.gd" id="35_fh14p"]
+[ext_resource type="Script" path="res://Scripts/keypad.gd" id="35_fh14p"]
 [ext_resource type="Texture2D" uid="uid://birh84b84vfx" path="res://Assets/BaseModels/keypad/keypad_leather_red_03_coll1_1k.jpg" id="36_2kcn7"]
 [ext_resource type="Texture2D" uid="uid://guc2veb0xevq" path="res://Assets/BaseModels/keypad/keypad_leather_red_03_rough_1k.png" id="37_5it3k"]
 [ext_resource type="Texture2D" uid="uid://dibkwoagp5xjr" path="res://Assets/BaseModels/keypad/keypad_leather_red_03_nor_gl_1k.jpg" id="38_jvoqf"]
@@ -49,8 +48,6 @@ fog_light_color = Color(0, 0, 0, 1)
 fog_density = 0.1258
 volumetric_fog_anisotropy = 0.7
 volumetric_fog_length = 8.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1bknx"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h27m1"]
 emission_shape = 3
@@ -69,16 +66,6 @@ albedo_color = Color(0.19882, 0.531332, 0.888195, 0.270588)
 [sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_kkfqn"]
 material = SubResource("StandardMaterial3D_ugsl1")
 size = 0.02
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3nsvm"]
-
-[sub_resource type="OggPacketSequence" id="OggPacketSequence_wih66"]
-packet_data = Array[Array]([[PackedByteArray("AXZvcmJpcwAAAAACRKwAAAAAAAAAcQIAAAAAALgB")], [PackedByteArray("A3ZvcmJpcy0AAABYaXBoLk9yZyBsaWJWb3JiaXMgSSAyMDEwMTEwMSAoU2NoYXVmZW51Z2dldCkEAAAAEwAAAEFMQlVNPVB1YmxpYyBEb21haW4MAAAAVElUTEU9d29vZDAyEQAAAEFSVElTVD1rZGRla2FkZW56HgAAAENPTU1FTlRTPUZlZWwgZnJlZSB0byB1c2UgdGhpcwE="), PackedByteArray("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")], [PackedByteArray("5Bwv1Q1na7ox57hvbriGmbG4EKMAAFVVs6pDh0bY9rreZh1qymEYri46weCh6HbDAngA"), PackedByteArray("klXU1V2AIID0bhVNdQ8gANL7rs0sD5TNcqitLWO/Jv3ZbdioZbWoaYRKl5mZmRnAeNYfvMYeZOJLdeqz47bWmH1ZOdbhA7WxjKyysCBV44Ads7FMs5VUqUWjQ4estIVY1VKVgq5T3cSqCg5XhFlgCVRUgZVKCGJaEgAVx5llynicUhUQSV1hjCRhQwHCgJYgCAjX1QPdZTUyCmFhJABAbAAbEEUpJBatCpkEmk7phEgYh6FJYcQMUiAwAopnSIfNQYSx7VaiduwxwgYAWjEbVQJlJGhoYqO0CxyGiCrSTqehAQkAanU2ayuNbaA4HadBeKCFKLR0bqeLBbAlEiRwWCVvAxoyDENm6qBo45ZTRyzQ1f7fjD+DbQkgtmnR5d9/fywhMe0iAytEku9HKz8ZFvtbsgSsRd5PPy0ugg6KQwgIWhwj"), PackedByteArray("RPm8BgRwSN2pnlcCZ2SIHBWTB0CZU4xRK6BHHV6pbK6gJyLEmImlkJTmuwlEbNqyqh2SJ1DpuGdE28yOZzdk0eAA"), PackedByteArray("dPFoCZRbEBeVLh4tgRBIxGofoMzJMALNAOoLyUjj8GRIrVE6TVQBxZMmMLKjCSCanjgXd0ytwVTa8Zp2qBN7Kw=="), PackedByteArray("fPEUYMUOCFDGeIwRWijih/QA2EpigGoAbcuQZFKTYKZjdXecS7IiRSR2JCeKg8GoQ0/jlcLplhgaaEUY7St/Ag=="), PackedByteArray("dPlQy5QMFBF/y0cpKU1FOM+7q54iJIu5hICTkqh4o1hFo5R7qS8roWWl1AuLGlov5VDZy4q6UHHvWVHF5UMpnHa6FHfgwYR2vGBj0G2GQPCCBAY="), PackedByteArray("PAqpzUanV+d5j0NqtcnK78V1b72ZZUbYLAMDR1IyoYOqE0VUqqMqGmtbDArWKMVCLVUbFU2q0aHxIscAYahYY4VaegWRQQEaahB5agk="), PackedByteArray("NBrNZNgWyLBoNKphHBelMsNbT1aLFASsF8fAa7PVrRXrFNXWWZ8qFbliR2MFa6iQMFxZgmDRzyxqtwSeMruqYBkwYRQGUCSRHNvM6usq"), PackedByteArray("mng05sjmQCQFdbzEozF7NguRNNTjfQMAbE+2Y2ypnKSy0ahZo9qg3bIyMwNQESkLYNi4am/jaMSpA1aNBJokBkYrYValNUmJcS5rWjETazaKGmpYN0wL6zrQikWroIoBUUVUUUFVLHZVPUqGwwqjEBkLC8i6ki2iqBoVUcVOMZC9li5PnEhE6cLFgkjGGCNGEKhaMTTGwIJJGo9yAoRB4GyswmlZjgasEACwgfbKLUhdvIZyg4yFi8KSQISYkvkQJNFSQkqBKbvMhzwFnEgYrY2MoYGQQUI0MoWQCWkmGUkgBQCd06fGAAGRsekBQa4sorBLtGtjhLZolruIIRfKSdl2IxBaGyfJgkJksj1IIsuE0dGC3k9lCWA1QsZCAEBki9+ylSTbXjEIIdYYMAAAX6mj+xXNlCMVaKDcC+Eq39H83m8p1StSwchtQSsQhAM="), PackedByteArray("HllcYgfvPxNY+CKLc+zg/WcSMPPd7QAm5S7bbMNH22hDQ11iZmaWTAJ2pq2d2tjgRG3UzjCNBDvD1mIndt6wU0NFLC3VuoGZyTDsLVWtoKJDp6JDxSDGKCKqxlZBp6poFGUFFAwGGMsEABishbYRoHbYbmMTeABCAIwjg0EhNgHYaYyLCqL0t2U3jAK3wUC727oBhEEMCEiV8ASgqoULLZK7EECMgATLbacEjiZkjNqlQFA2WIICBW4aKEpgApGJiWgBIBoYUu0uByNaIGtA4QUCQVmAF0OsaSHcUqKEiAJZFjAAEKg8KE2AyOyyTBVwwW1ie9/E15JVTbaK0ELoWAgYYKRIPLJHaj1qdFQRAeAFLBYLNqD2ZWn5rrSxvB5/g44Dy+9iOM8K4cOPl7TyGlqt4k8OIc8neaBDGzIxYCoqAAM="), PackedByteArray("3lhcpwLZ+gHgbyyuY4Gs/wDwXWIX9hlt21rNtCZppl2WFDMBYGOY9mKnNqadpV6xNUwLY8woW1iqXXYYYmlLQQ2rOYaZWzFtwLAwsxRVFcMUSwQERcVhQLQKpkBjQQUQVEBhOQ2UCuQHeitSHNgYIVqIhmC1JRUhQzAIpGYiRCpWlwrGzZLBShoJK0k/tOkyM7IyBFtNIkOoFSSkpqXVa8go8EgOpTDq4lLjpQnDkQatrGXhciHI1UUgHMZAFkZNpFvbxWoIkSlpAC3ghihVkOBhjMUqgfS6czfvQKAKXRAWKPZklbexxhIitQpV41h7XBNYcvphkAhLbeICuwQUoYlNWmi7KI66CjEuuoCgYLo3hkM6Iw1Ls3gMGMcC02hR68/5u07pP0vfMSwGMBgLRJtFyMA64wL31svskBSgS99c1nT8AF3KU1hvTOwC1SNNQQI="), PackedByteArray("fli8VgPS/MigHi+xeK0OpPwA1OO79egBEnvmZ9u21oiGE8oVY2bJBCQgaWqorYh9MdTOaqNiWu0bzGxJRS2m1SKiYpEpkqxqpEYWgdGGiqmIIa6hhoBYASyKCJrKDVkRj22CUga9LCGyjWqrQPXgEpOqyiiwskenAlgQSr1RFbUW2iyBAiA0icN44oyAKYGgMBBh07IpIRlcXixgoWRLdJfVMCBCGyCFBqMKPBjNCsIVpiMsWECKwEQRlOUQZI1AMVQOI2sFQ4JsGOIBeaZu9MOUkgdoZsUGBHEC2FLHRAXV7WwACNMAhTPIQlRos7s6PkFQDJYVY69FnCxtNfZ4lewuiwUE2MoyRmAMsBgy5Di/slBNlBiIQEDKAP8mmmgmQqkGhFa8AlA+9bKXA/OXeXYfU7boJ9ffSx1Hx22qTnPBX0qyCk/itrCcRuTt4NQzvwQ="), PackedByteArray("Plg8pgiJDw3U8A0W99GB9R9NRgbD/46aKikjUoDJFs4sGKLR1luj7VCXppiY2WUmAW3GWtVCC1U1hqHFvkpGm/YqasH0RmRJc7Z3FmtlsagNWmvBi3QFZdoDDXaLolUAhayiQSaOJmSP3vWyoZkEAJlFBRAMgkipFYu9GMCGFGGQ1goKg4ZKAiTbZdqFQhJZVFlA7EkBKSNXmSAAdTPCpqaIYwkEVUMaQwkC5FC0AYlCkNSPCI4iLasuUQDYYIAaD0wvKRwjBDi0hUrISE1ZpotZM4vRSjxGRqOVEJRmrNDWeIUVYEUeAASzLk2HLpCXZa3MRW7ktQ1oARqV1QIzTCJeYRBJ0QIgnJIwKxSQ9NyINhUApt0sq1fA3OS0jX7AIAGKDKfvHilEUkzEMi0/PCgpX5JNVJBdp93Q8MwkDwUSrAACjKHjzcDDcxvQ8VAhACg="), PackedByteArray("fkecZgeJD0AN747YFweWDxngfQMAkDLTvhxjiNRrrTUN12ViitllZoAKAFRsc2KcZS3XJ1obbRINrpD0OCwJaUISlAXD8VrNauStWLViYdsisWGwsMwz5agkojkYCLlpGF2hiiVxdjaQivdRyfTiNYaqAFZbcgM4CGFdFkFQltpqjZmqZ6xwPKwjC0AazAJVwwCepU0oSV0seBsGqtgoVAwykKjUhWRG1IW13dsEA2MEAofTI2607bQV+Nws0W6vGU28y5XKQWDA9CoNlQsYu0GJOn4DhnEB9kSGsASNxoKEgciWGWTZyEF3kpMMkwYRIcA0cqi8ypGD5LJkh4k7VbGQilaOBeOgUpga8Ll45Cm7CRmEy0ggtMTYXhQDAJT75yj0Xtt/rmTPWmyYU6qLAqW+D06/70Pnjs39n+TjIAZkMIAYyi/KcCT96RoFSAIA"), PackedByteArray("HlccowZpPw0K43xzxZ4cAvlpyA183wAAgcS2tW1FIxqmrctuXZpmZhKQFQAkWA2n2jkmODCAWcWHEi7MMJnhMbAChK/rFZV7jBluWfambZuttqWbqqKW6UWjkqYox1LTUtEhT0bTgqBdaxEsjIw0pDBiQqGEDpSRBlJxQWgQkuWwBQZTAEubxg6xNRCQtAGDyVUxYhIkVQkAEQI4EFI4EA5ByxaAkh4Z7MWCFqZuqpJCxMS4IHUKIgVRsJQGBOkAQc+KKyZyWlCAVUmCAhlnxJPUejBBhJoGHEjSLKIAIEghsEHENkcJw7Hb9jEvJ4ANYYEsMaQ1lA+iqnWyM6EqNqIYrAIbbIAROBIYkMUElQCgIRcRgkGSLVBsQTfJwTnHfF9iBQAAcCFgsIkNEoDAMQBYIBED2EJAzMxr43mNIgAw2E6FggF5xQYoxOFdG/SUWlp+8tnIBDdPAA=="), PackedByteArray("nlccZ49BvG4E4MsrjrPHwGsjgPi7tg1hHx1tWNs2Wsli7LJLMZOAvdUnWI0sFYbRYLGk+TbzFsioDKutZo2xZTItUqRExmbV0hBdsU6S22DbMxhqYiXVWJUYq1ot9aUrqUZVr6iq1YGMywpcki0jNAViwQhMKI+lDoAUDNKVDFBMFA81VUPRdgsbKTtUZMpWChemAsCrAhYaGBUOUciMcJeEMOqVUiActNt3kTyVcyisoiWN5KXBYGgJYqtAxguKGAyAQAsCwSAMECIsG6ANSbtaXhGYShwZkAyi3QAOMaQrNEikY2yZRFQMK7JlZMB41CxkhHAklItlSRaGPTIEYnBsZEGImbbCsCRKOAZADEAh3MQYUgjvCyd+NJ7nNV1nY+SpliMYTzo04pWuu4RdBGDAIJDCk1cnv5J7TsMsGIQBIDZGtuIlqTQ2D3561Z/ThIsuAQ=="), PackedByteArray("fkdsc0LCqwHw8op9joD+GgKGePe2IGFgHzHaiKiV1qhkZmZml0mAXGxtTVVs7BLsSirxo2nbNCqlptiWXK8y0imGRW71wMoSz1DteSBuqVjBrWdrKNgICKosUvWYlkEFVsQQSho7kQgzbGfQsskiSwFLoZsuIEZpQSiiOMESBcQSE0uVMjjAggSEQRrjSDVACwxEoYC0INZA47RXzT4KgXFkYSYhNcuhkJhKtZmWWIG+qnueCFsWWYCz5bCFbEBUl3XouVEmkTELYGiCMIHABjS0tQoYS1APyX2zqsEATVlOwedOup03f03GaaSssCK1rQhRcSqxUIVIbkzCKkyLGICCJ1oYVvZFTeyy1fwr3dn4vr8GMYrvTOnTzU1M7q7/vdPP2Oh0n7LmkjKzMDeBgQUABN1YeixbGEyRAA=="), PackedByteArray("fmXc9zlUAQBXw33vwRNo4LBvqUZjWLQWKkOZCZiZAQAwbLRBrVpTS2umpTVL05pVrFk3LDJvDRttsrS3wbpYsdFCrFtTqzZYWtpgqRktUVY1S1UdjRaNblG0ilQUSsUUaosqUU7AE1VQFVTF1qupqAShFEqhsAa5sYyMQhEGhEE5MDKysIwMFpZnMWVGLZHWhBGjqCgrkZV0GODAsxg5sdgc0bpJTTelQe4MRRgQB+PAFRlZRJRDaSwc2EFMEBKEUhjhwBPELKEURoRROTKysHDgCcwSIgvLlhm1RCp3WngZL0ZraxUWlpHRZJWpZSoAhWOvJVo3qYUAxN9N032ywCiUQhEGeBmXGbXEfU3iWqYWAs1eC8y76eLuOx82s07Zb8CEuXVquk86Hyo1w7lgP+/NbO6CfefDOtt0AQ==")]])
-granule_positions = PackedInt64Array(0, 0, 10785)
-sampling_rate = 44100.0
-
-[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_ya0i2"]
-packet_sequence = SubResource("OggPacketSequence_wih66")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bmhe0"]
 size = Vector3(0.454224, 1.71161, 0.815948)
@@ -174,6 +161,16 @@ albedo_color = Color(1, 0, 0, 1)
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.659057, 0.186069, 0.234033, 1)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3nsvm"]
+
+[sub_resource type="OggPacketSequence" id="OggPacketSequence_wih66"]
+packet_data = Array[Array]([[PackedByteArray("AXZvcmJpcwAAAAACRKwAAAAAAAAAcQIAAAAAALgB")], [PackedByteArray("A3ZvcmJpcy0AAABYaXBoLk9yZyBsaWJWb3JiaXMgSSAyMDEwMTEwMSAoU2NoYXVmZW51Z2dldCkEAAAAEwAAAEFMQlVNPVB1YmxpYyBEb21haW4MAAAAVElUTEU9d29vZDAyEQAAAEFSVElTVD1rZGRla2FkZW56HgAAAENPTU1FTlRTPUZlZWwgZnJlZSB0byB1c2UgdGhpcwE="), PackedByteArray("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")], [PackedByteArray("5Bwv1Q1na7ox57hvbriGmbG4EKMAAFVVs6pDh0bY9rreZh1qymEYri46weCh6HbDAngA"), PackedByteArray("klXU1V2AIID0bhVNdQ8gANL7rs0sD5TNcqitLWO/Jv3ZbdioZbWoaYRKl5mZmRnAeNYfvMYeZOJLdeqz47bWmH1ZOdbhA7WxjKyysCBV44Ads7FMs5VUqUWjQ4estIVY1VKVgq5T3cSqCg5XhFlgCVRUgZVKCGJaEgAVx5llynicUhUQSV1hjCRhQwHCgJYgCAjX1QPdZTUyCmFhJABAbAAbEEUpJBatCpkEmk7phEgYh6FJYcQMUiAwAopnSIfNQYSx7VaiduwxwgYAWjEbVQJlJGhoYqO0CxyGiCrSTqehAQkAanU2ayuNbaA4HadBeKCFKLR0bqeLBbAlEiRwWCVvAxoyDENm6qBo45ZTRyzQ1f7fjD+DbQkgtmnR5d9/fywhMe0iAytEku9HKz8ZFvtbsgSsRd5PPy0ugg6KQwgIWhwj"), PackedByteArray("RPm8BgRwSN2pnlcCZ2SIHBWTB0CZU4xRK6BHHV6pbK6gJyLEmImlkJTmuwlEbNqyqh2SJ1DpuGdE28yOZzdk0eAA"), PackedByteArray("dPFoCZRbEBeVLh4tgRBIxGofoMzJMALNAOoLyUjj8GRIrVE6TVQBxZMmMLKjCSCanjgXd0ytwVTa8Zp2qBN7Kw=="), PackedByteArray("fPEUYMUOCFDGeIwRWijih/QA2EpigGoAbcuQZFKTYKZjdXecS7IiRSR2JCeKg8GoQ0/jlcLplhgaaEUY7St/Ag=="), PackedByteArray("dPlQy5QMFBF/y0cpKU1FOM+7q54iJIu5hICTkqh4o1hFo5R7qS8roWWl1AuLGlov5VDZy4q6UHHvWVHF5UMpnHa6FHfgwYR2vGBj0G2GQPCCBAY="), PackedByteArray("PAqpzUanV+d5j0NqtcnK78V1b72ZZUbYLAMDR1IyoYOqE0VUqqMqGmtbDArWKMVCLVUbFU2q0aHxIscAYahYY4VaegWRQQEaahB5agk="), PackedByteArray("NBrNZNgWyLBoNKphHBelMsNbT1aLFASsF8fAa7PVrRXrFNXWWZ8qFbliR2MFa6iQMFxZgmDRzyxqtwSeMruqYBkwYRQGUCSRHNvM6usq"), PackedByteArray("mng05sjmQCQFdbzEozF7NguRNNTjfQMAbE+2Y2ypnKSy0ahZo9qg3bIyMwNQESkLYNi4am/jaMSpA1aNBJokBkYrYValNUmJcS5rWjETazaKGmpYN0wL6zrQikWroIoBUUVUUUFVLHZVPUqGwwqjEBkLC8i6ki2iqBoVUcVOMZC9li5PnEhE6cLFgkjGGCNGEKhaMTTGwIJJGo9yAoRB4GyswmlZjgasEACwgfbKLUhdvIZyg4yFi8KSQISYkvkQJNFSQkqBKbvMhzwFnEgYrY2MoYGQQUI0MoWQCWkmGUkgBQCd06fGAAGRsekBQa4sorBLtGtjhLZolruIIRfKSdl2IxBaGyfJgkJksj1IIsuE0dGC3k9lCWA1QsZCAEBki9+ylSTbXjEIIdYYMAAAX6mj+xXNlCMVaKDcC+Eq39H83m8p1StSwchtQSsQhAM="), PackedByteArray("HllcYgfvPxNY+CKLc+zg/WcSMPPd7QAm5S7bbMNH22hDQ11iZmaWTAJ2pq2d2tjgRG3UzjCNBDvD1mIndt6wU0NFLC3VuoGZyTDsLVWtoKJDp6JDxSDGKCKqxlZBp6poFGUFFAwGGMsEABishbYRoHbYbmMTeABCAIwjg0EhNgHYaYyLCqL0t2U3jAK3wUC727oBhEEMCEiV8ASgqoULLZK7EECMgATLbacEjiZkjNqlQFA2WIICBW4aKEpgApGJiWgBIBoYUu0uByNaIGtA4QUCQVmAF0OsaSHcUqKEiAJZFjAAEKg8KE2AyOyyTBVwwW1ie9/E15JVTbaK0ELoWAgYYKRIPLJHaj1qdFQRAeAFLBYLNqD2ZWn5rrSxvB5/g44Dy+9iOM8K4cOPl7TyGlqt4k8OIc8neaBDGzIxYCoqAAM="), PackedByteArray("3lhcpwLZ+gHgbyyuY4Gs/wDwXWIX9hlt21rNtCZppl2WFDMBYGOY9mKnNqadpV6xNUwLY8woW1iqXXYYYmlLQQ2rOYaZWzFtwLAwsxRVFcMUSwQERcVhQLQKpkBjQQUQVEBhOQ2UCuQHeitSHNgYIVqIhmC1JRUhQzAIpGYiRCpWlwrGzZLBShoJK0k/tOkyM7IyBFtNIkOoFSSkpqXVa8go8EgOpTDq4lLjpQnDkQatrGXhciHI1UUgHMZAFkZNpFvbxWoIkSlpAC3ghihVkOBhjMUqgfS6czfvQKAKXRAWKPZklbexxhIitQpV41h7XBNYcvphkAhLbeICuwQUoYlNWmi7KI66CjEuuoCgYLo3hkM6Iw1Ls3gMGMcC02hR68/5u07pP0vfMSwGMBgLRJtFyMA64wL31svskBSgS99c1nT8AF3KU1hvTOwC1SNNQQI="), PackedByteArray("fli8VgPS/MigHi+xeK0OpPwA1OO79egBEnvmZ9u21oiGE8oVY2bJBCQgaWqorYh9MdTOaqNiWu0bzGxJRS2m1SKiYpEpkqxqpEYWgdGGiqmIIa6hhoBYASyKCJrKDVkRj22CUga9LCGyjWqrQPXgEpOqyiiwskenAlgQSr1RFbUW2iyBAiA0icN44oyAKYGgMBBh07IpIRlcXixgoWRLdJfVMCBCGyCFBqMKPBjNCsIVpiMsWECKwEQRlOUQZI1AMVQOI2sFQ4JsGOIBeaZu9MOUkgdoZsUGBHEC2FLHRAXV7WwACNMAhTPIQlRos7s6PkFQDJYVY69FnCxtNfZ4lewuiwUE2MoyRmAMsBgy5Di/slBNlBiIQEDKAP8mmmgmQqkGhFa8AlA+9bKXA/OXeXYfU7boJ9ffSx1Hx22qTnPBX0qyCk/itrCcRuTt4NQzvwQ="), PackedByteArray("Plg8pgiJDw3U8A0W99GB9R9NRgbD/46aKikjUoDJFs4sGKLR1luj7VCXppiY2WUmAW3GWtVCC1U1hqHFvkpGm/YqasH0RmRJc7Z3FmtlsagNWmvBi3QFZdoDDXaLolUAhayiQSaOJmSP3vWyoZkEAJlFBRAMgkipFYu9GMCGFGGQ1goKg4ZKAiTbZdqFQhJZVFlA7EkBKSNXmSAAdTPCpqaIYwkEVUMaQwkC5FC0AYlCkNSPCI4iLasuUQDYYIAaD0wvKRwjBDi0hUrISE1ZpotZM4vRSjxGRqOVEJRmrNDWeIUVYEUeAASzLk2HLpCXZa3MRW7ktQ1oARqV1QIzTCJeYRBJ0QIgnJIwKxSQ9NyINhUApt0sq1fA3OS0jX7AIAGKDKfvHilEUkzEMi0/PCgpX5JNVJBdp93Q8MwkDwUSrAACjKHjzcDDcxvQ8VAhACg="), PackedByteArray("fkecZgeJD0AN747YFweWDxngfQMAkDLTvhxjiNRrrTUN12ViitllZoAKAFRsc2KcZS3XJ1obbRINrpD0OCwJaUISlAXD8VrNauStWLViYdsisWGwsMwz5agkojkYCLlpGF2hiiVxdjaQivdRyfTiNYaqAFZbcgM4CGFdFkFQltpqjZmqZ6xwPKwjC0AazAJVwwCepU0oSV0seBsGqtgoVAwykKjUhWRG1IW13dsEA2MEAofTI2607bQV+Nws0W6vGU28y5XKQWDA9CoNlQsYu0GJOn4DhnEB9kSGsASNxoKEgciWGWTZyEF3kpMMkwYRIcA0cqi8ypGD5LJkh4k7VbGQilaOBeOgUpga8Ll45Cm7CRmEy0ggtMTYXhQDAJT75yj0Xtt/rmTPWmyYU6qLAqW+D06/70Pnjs39n+TjIAZkMIAYyi/KcCT96RoFSAIA"), PackedByteArray("HlccowZpPw0K43xzxZ4cAvlpyA183wAAgcS2tW1FIxqmrctuXZpmZhKQFQAkWA2n2jkmODCAWcWHEi7MMJnhMbAChK/rFZV7jBluWfambZuttqWbqqKW6UWjkqYox1LTUtEhT0bTgqBdaxEsjIw0pDBiQqGEDpSRBlJxQWgQkuWwBQZTAEubxg6xNRCQtAGDyVUxYhIkVQkAEQI4EFI4EA5ByxaAkh4Z7MWCFqZuqpJCxMS4IHUKIgVRsJQGBOkAQc+KKyZyWlCAVUmCAhlnxJPUejBBhJoGHEjSLKIAIEghsEHENkcJw7Hb9jEvJ4ANYYEsMaQ1lA+iqnWyM6EqNqIYrAIbbIAROBIYkMUElQCgIRcRgkGSLVBsQTfJwTnHfF9iBQAAcCFgsIkNEoDAMQBYIBED2EJAzMxr43mNIgAw2E6FggF5xQYoxOFdG/SUWlp+8tnIBDdPAA=="), PackedByteArray("nlccZ49BvG4E4MsrjrPHwGsjgPi7tg1hHx1tWNs2Wsli7LJLMZOAvdUnWI0sFYbRYLGk+TbzFsioDKutZo2xZTItUqRExmbV0hBdsU6S22DbMxhqYiXVWJUYq1ot9aUrqUZVr6iq1YGMywpcki0jNAViwQhMKI+lDoAUDNKVDFBMFA81VUPRdgsbKTtUZMpWChemAsCrAhYaGBUOUciMcJeEMOqVUiActNt3kTyVcyisoiWN5KXBYGgJYqtAxguKGAyAQAsCwSAMECIsG6ANSbtaXhGYShwZkAyi3QAOMaQrNEikY2yZRFQMK7JlZMB41CxkhHAklItlSRaGPTIEYnBsZEGImbbCsCRKOAZADEAh3MQYUgjvCyd+NJ7nNV1nY+SpliMYTzo04pWuu4RdBGDAIJDCk1cnv5J7TsMsGIQBIDZGtuIlqTQ2D3561Z/ThIsuAQ=="), PackedByteArray("fkdsc0LCqwHw8op9joD+GgKGePe2IGFgHzHaiKiV1qhkZmZml0mAXGxtTVVs7BLsSirxo2nbNCqlptiWXK8y0imGRW71wMoSz1DteSBuqVjBrWdrKNgICKosUvWYlkEFVsQQSho7kQgzbGfQsskiSwFLoZsuIEZpQSiiOMESBcQSE0uVMjjAggSEQRrjSDVACwxEoYC0INZA47RXzT4KgXFkYSYhNcuhkJhKtZmWWIG+qnueCFsWWYCz5bCFbEBUl3XouVEmkTELYGiCMIHABjS0tQoYS1APyX2zqsEATVlOwedOup03f03GaaSssCK1rQhRcSqxUIVIbkzCKkyLGICCJ1oYVvZFTeyy1fwr3dn4vr8GMYrvTOnTzU1M7q7/vdPP2Oh0n7LmkjKzMDeBgQUABN1YeixbGEyRAA=="), PackedByteArray("fmXc9zlUAQBXw33vwRNo4LBvqUZjWLQWKkOZCZiZAQAwbLRBrVpTS2umpTVL05pVrFk3LDJvDRttsrS3wbpYsdFCrFtTqzZYWtpgqRktUVY1S1UdjRaNblG0ilQUSsUUaosqUU7AE1VQFVTF1qupqAShFEqhsAa5sYyMQhEGhEE5MDKysIwMFpZnMWVGLZHWhBGjqCgrkZV0GODAsxg5sdgc0bpJTTelQe4MRRgQB+PAFRlZRJRDaSwc2EFMEBKEUhjhwBPELKEURoRROTKysHDgCcwSIgvLlhm1RCp3WngZL0ZraxUWlpHRZJWpZSoAhWOvJVo3qYUAxN9N032ywCiUQhEGeBmXGbXEfU3iWqYWAs1eC8y76eLuOx82s07Zb8CEuXVquk86Hyo1w7lgP+/NbO6CfefDOtt0AQ==")]])
+granule_positions = PackedInt64Array(0, 0, 10785)
+sampling_rate = 44100.0
+
+[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_ya0i2"]
+packet_sequence = SubResource("OggPacketSequence_wih66")
+
 [node name="map" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -181,15 +178,260 @@ environment = SubResource("Environment_c8v8m")
 
 [node name="MAP" type="Node3D" parent="."]
 
-[node name="ground" type="Node3D" parent="MAP"]
-transform = Transform3D(200, 0, 0, 0, 1, 0, 0, 0, 200, 0.000958443, -0.00464904, -0.000488281)
+[node name="objects" type="Node3D" parent="MAP"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MAP/ground"]
+[node name="Room_1" type="Node3D" parent="MAP/objects"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/ground/StaticBody3D"]
-shape = SubResource("BoxShape3D_1bknx")
+[node name="table" parent="MAP/objects/Room_1" instance=ExtResource("10_jp13b")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.0957, 0.495351, 27.2185)
+
+[node name="bookshelf" parent="MAP/objects/Room_1" instance=ExtResource("15_olb1q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22351, 0.495351, 27.4362)
+
+[node name="bookshelf2" parent="MAP/objects/Room_1" instance=ExtResource("15_olb1q")]
+transform = Transform3D(-2.62072e-08, 0.340642, -0.940193, 1, -4.37114e-08, -4.37114e-08, -5.59871e-08, -0.940193, -0.340642, 3.50275, 1.11597, 24.929)
+
+[node name="book" parent="MAP/objects/Room_1" instance=ExtResource("16_eshht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.67938, 0.872049, 27.3655)
+
+[node name="book2" parent="MAP/objects/Room_1" instance=ExtResource("16_eshht")]
+transform = Transform3D(0.994847, 0, 0.101386, 0, 1, 0, -0.101386, 0, 0.994847, 8.58101, 0.872049, 27.3655)
+
+[node name="book3" parent="MAP/objects/Room_1" instance=ExtResource("16_eshht")]
+transform = Transform3D(0.840266, 0.53537, 0.0856326, -0.532611, 0.844618, -0.0542791, -0.101386, 0, 0.994847, 8.32721, 0.872049, 27.3655)
+
+[node name="standingLight" parent="MAP/objects/Room_1" instance=ExtResource("18_a0i7n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2799, 0.495351, 26.2413)
 
 [node name="walls" type="Node3D" parent="MAP"]
+
+[node name="window2" parent="MAP/walls" instance=ExtResource("3_ucbwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.481, 28)
+
+[node name="window3" parent="MAP/walls" instance=ExtResource("3_ucbwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.481, 28)
+
+[node name="pillar" parent="MAP/walls" instance=ExtResource("13_gnslx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.372246, 22)
+
+[node name="pillar5" parent="MAP/walls" instance=ExtResource("13_gnslx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.372246, 10)
+
+[node name="pillar6" parent="MAP/walls" instance=ExtResource("13_gnslx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.372246, 10)
+
+[node name="pillar2" parent="MAP/walls" instance=ExtResource("13_gnslx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.372246, 28)
+
+[node name="pillar3" parent="MAP/walls" instance=ExtResource("13_gnslx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.372246, 28)
+
+[node name="pillar4" parent="MAP/walls" instance=ExtResource("13_gnslx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.372246, 22)
+
+[node name="floor" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 24)
+
+[node name="floor2" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 24)
+
+[node name="floor3" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.00043, 0.0213822, 15.9961)
+
+[node name="floor4" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 16)
+
+[node name="floor5" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 8)
+
+[node name="floor6" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 8)
+
+[node name="floor7" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="floor8" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="floor9" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 24)
+
+[node name="floor10" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 24)
+
+[node name="floor11" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 16)
+
+[node name="floor12" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 16)
+
+[node name="floor13" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 8)
+
+[node name="floor14" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 8)
+
+[node name="floor15" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="floor16" parent="MAP/walls" instance=ExtResource("12_ooli6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 0)
+
+[node name="ceiling" parent="MAP/walls" instance=ExtResource("17_3xkdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 24)
+
+[node name="ceiling2" parent="MAP/walls" instance=ExtResource("17_3xkdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 24)
+
+[node name="ceiling3" parent="MAP/walls" instance=ExtResource("17_3xkdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 16)
+
+[node name="ceiling4" parent="MAP/walls" instance=ExtResource("17_3xkdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 16)
+
+[node name="ceiling5" parent="MAP/walls" instance=ExtResource("17_3xkdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 8)
+
+[node name="ceiling6" parent="MAP/walls" instance=ExtResource("17_3xkdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 8)
+
+[node name="wall11" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, 0.481, 28)
+
+[node name="wall13" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0.481, 28)
+
+[node name="wall14" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 27)
+
+[node name="wall15" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 25)
+
+[node name="wall16" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 23)
+
+[node name="wall24" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 21)
+
+[node name="wall25" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 19)
+
+[node name="wall26" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 17)
+
+[node name="wall33" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 15)
+
+[node name="wall35" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 13)
+
+[node name="wall37" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 11)
+
+[node name="wall40" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0.999989, 0, -3.55271e-15, 0, 0.999989, 0, 3.55271e-15, 0, 0.999989, 4, 0.481, 10)
+
+[node name="wall41" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0.999989, 0, -3.55271e-15, 0, 0.999989, 0, 3.55271e-15, 0, 0.999989, 6, 0.481, 10)
+
+[node name="wall42" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0.999989, 0, -3.55271e-15, 0, 0.999989, 0, 3.55271e-15, 0, 0.999989, 10, 0.481, 10)
+
+[node name="wall44" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0.999989, 0, -3.55271e-15, 3.10588e-22, -0.999989, 8.74218e-08, -3.55271e-15, -8.74218e-08, -0.999989, 8, 6.481, 10)
+
+[node name="wall43" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0.999989, 0, -3.55271e-15, 0, 0.999989, 0, 3.55271e-15, 0, 0.999989, 12, 0.481, 10)
+
+[node name="wall12" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 0.481, 28)
+
+[node name="wall17" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 27)
+
+[node name="wall18" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 25)
+
+[node name="wall19" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 23)
+
+[node name="wall27" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 9, 0.481, 20)
+
+[node name="wall30" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 9, 0.481, 20)
+
+[node name="wall39" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 9, 0.481, 20)
+
+[node name="Decal2" type="Decal" parent="MAP/walls/wall39"]
+transform = Transform3D(-4.97125, 5.03529e-07, -7.53662e-15, 0, -1.45765e-07, -1.14187, -7.50637e-07, -3.33472, 4.99128e-08, 0.134418, 2.46214, -0.672499)
+size = Vector3(0.5574, 0.38611, 2.27112)
+texture_albedo = ExtResource("19_4p47u")
+emission_energy = 0.0
+modulate = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="wall31" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 7, 0.481, 20)
+
+[node name="Decal" type="Decal" parent="MAP/walls/wall31"]
+transform = Transform3D(-4.97125, 5.03529e-07, -7.53662e-15, 0, -1.45765e-07, -1.14187, -7.50637e-07, -3.33472, 4.99128e-08, 0.134418, 2.46214, -0.634541)
+size = Vector3(0.5574, 0.408875, 2.27112)
+texture_albedo = ExtResource("20_0tixy")
+emission_energy = 0.0
+modulate = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="wall28" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 19)
+
+[node name="wall32" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 21)
+
+[node name="wall29" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 17)
+
+[node name="wall34" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 15)
+
+[node name="wall36" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 13)
+
+[node name="wall38" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 11)
+
+[node name="wall20" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 12, 0.481, 22)
+
+[node name="Decal" type="Decal" parent="MAP/walls/wall20"]
+transform = Transform3D(-4.97125, 5.03529e-07, -7.53662e-15, 0, -1.45765e-07, -1.14187, -7.50637e-07, -3.33472, 4.99128e-08, -0.123826, 2.46214, -0.68634)
+size = Vector3(0.5574, 0.37781, 2.27112)
+texture_albedo = ExtResource("21_yoelf")
+emission_energy = 0.0
+modulate = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="wall21" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 10, 0.481, 22)
+
+[node name="wall22" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 6, 0.481, 22)
+
+[node name="wall23" parent="MAP/walls" instance=ExtResource("18_7gyks")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 4.01364, 0.481, 22.0001)
+
+[node name="Decal" type="Decal" parent="MAP/walls/wall23"]
+transform = Transform3D(-4.97125, 5.03529e-07, -7.53662e-15, 0, -1.45765e-07, -1.14187, -7.50637e-07, -3.33472, 4.99128e-08, 0.134418, 2.46214, -0.663544)
+size = Vector3(0.5574, 0.391481, 2.27112)
+texture_albedo = ExtResource("22_5jnss")
+emission_energy = 0.0
+modulate = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
 
 [node name="lights" type="Node3D" parent="MAP"]
 
@@ -252,17 +494,305 @@ volume_db = -18.0
 autoplay = true
 bus = &"Weather"
 
-[node name="Rain" type="GPUParticles3D" parent="MAP"]
+[node name="Rain" type="GPUParticles3D" parent="MAP/weather"]
 transform = Transform3D(3.14444, 1.06068, 0, -1.39369, 2.39312, 0, 0, 0, 2.03051, 11.9018, 19.009, 38.3559)
 amount = 5000
 lifetime = 1.2
 process_material = SubResource("ParticleProcessMaterial_h27m1")
 draw_pass_1 = SubResource("RibbonTrailMesh_kkfqn")
 
+[node name="interactables" type="Node3D" parent="MAP"]
+
+[node name="CameraCopy" parent="MAP/interactables" groups=["fakeCam"] instance=ExtResource("9_slhti")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.9522, 1.57994, 26.9489)
+script = null
+
+[node name="Area3D" type="Area3D" parent="MAP/interactables/CameraCopy"]
+transform = Transform3D(-4.37114e-06, 0, -100, 0, 100, 0, 100, 0, -4.37114e-06, 0.0380459, -0.0927926, -0.0207233)
+script = ExtResource("19_3wx7p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/CameraCopy/Area3D"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -4.43757e-05, -0.00149784, -0.000496745)
+shape = SubResource("BoxShape3D_bmhe0")
+
+[node name="Prompt" type="Sprite3D" parent="MAP/interactables/CameraCopy/Area3D"]
+transform = Transform3D(-0.003, 0, -4.52987e-10, 0, 0.003, 0, 4.52987e-10, 0, -0.003, -4.26248e-05, 0.0071467, 5.1111e-05)
+visible = false
+texture = ExtResource("19_0r2rh")
+
+[node name="keypad" parent="MAP/interactables" instance=ExtResource("24_3sfyo")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.00786, 1.64505, 10.3708)
+
+[node name="Decals" type="Node" parent="MAP/interactables/keypad"]
+
+[node name="Decal" type="Decal" parent="MAP/interactables/keypad/Decals"]
+transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 8.94517, 1.90175, 10.4567)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("25_bt3ql")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal2" type="Decal" parent="MAP/interactables/keypad/Decals"]
+transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.01091, 1.90175, 10.4567)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("26_k051a")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal3" type="Decal" parent="MAP/interactables/keypad/Decals"]
+transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.07037, 1.90175, 10.4567)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("27_1dq8m")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal4" type="Decal" parent="MAP/interactables/keypad/Decals"]
+transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 8.94761, 1.82617, 10.4567)
+visible = false
+size = Vector3(0.016355, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("28_lwt5l")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal5" type="Decal" parent="MAP/interactables/keypad/Decals"]
+transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.0119, 1.82508, 10.4567)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.072272)
+texture_albedo = ExtResource("29_fa0ns")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal6" type="Decal" parent="MAP/interactables/keypad/Decals"]
+transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.07158, 1.82638, 10.4567)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("30_df6bu")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal7" type="Decal" parent="MAP/interactables/keypad/Decals"]
+transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 8.94853, 1.75406, 10.4567)
+visible = false
+size = Vector3(0.0162952, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("31_2r8v3")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal9" type="Decal" parent="MAP/interactables/keypad/Decals"]
+transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.01174, 1.75452, 10.4567)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.072272)
+texture_albedo = ExtResource("32_3h0vm")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal10" type="Decal" parent="MAP/interactables/keypad/Decals"]
+transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.06978, 1.75507, 10.4567)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("33_wckjf")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Decal11" type="Decal" parent="MAP/interactables/keypad/Decals"]
+transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.01239, 1.68087, 10.4567)
+visible = false
+size = Vector3(0.015376, 0.0838128, 0.0703252)
+texture_albedo = ExtResource("34_em65o")
+emission_energy = 0.0
+upper_fade = 4.50855e-05
+lower_fade = 3.66208e-05
+
+[node name="Area3D" type="Area3D" parent="MAP/interactables/keypad"]
+transform = Transform3D(-4.37114e-06, 0, -100, 0, 100, 0, 100, 0, -4.37114e-06, 0.0380459, -0.0927926, -0.0207233)
+script = ExtResource("35_fh14p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Area3D"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -4.43757e-05, -0.00149784, -0.000496745)
+shape = SubResource("BoxShape3D_bmhe0")
+
+[node name="Prompt" type="Sprite3D" parent="MAP/interactables/keypad/Area3D"]
+transform = Transform3D(0.003, 0, 8.27181e-25, 0, 0.003, 0, -8.27181e-25, 0, 0.003, -4.26322e-05, 0.00789565, 5.11035e-05)
+visible = false
+texture = ExtResource("19_0r2rh")
+
+[node name="Keys" type="Node3D" parent="MAP/interactables/keypad"]
+
+[node name="E2" type="StaticBody3D" parent="MAP/interactables/keypad/Keys"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0395021, -0.000280619, 0.0859728)
+metadata/key_value = "E"
+
+[node name="Cube_003" type="MeshInstance3D" parent="MAP/interactables/keypad/Keys/E2"]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, -0.0224085, 0.0373946, 0.0619555)
+mesh = SubResource("ArrayMesh_tyooy")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_owg2l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Keys/E2"]
+transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, -0.0249896, 0.0375888, 0.0772586)
+shape = SubResource("BoxShape3D_ad7i8")
+
+[node name="10" type="StaticBody3D" parent="MAP/interactables/keypad/Keys"]
+transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.0373946, 0.00155354)
+metadata/key_value = "0"
+
+[node name="Cube_002" type="MeshInstance3D" parent="MAP/interactables/keypad/Keys/10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
+mesh = SubResource("ArrayMesh_4h1od")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Keys/10"]
+transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
+shape = SubResource("BoxShape3D_0su4a")
+
+[node name="11" type="StaticBody3D" parent="MAP/interactables/keypad/Keys"]
+transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.111804, 0.00155354)
+metadata/key_value = "8"
+
+[node name="Cube_002" type="MeshInstance3D" parent="MAP/interactables/keypad/Keys/11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
+mesh = SubResource("ArrayMesh_tyooy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Keys/11"]
+transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
+shape = SubResource("BoxShape3D_ad7i8")
+
+[node name="12" type="StaticBody3D" parent="MAP/interactables/keypad/Keys"]
+transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.111804, 0.0631523)
+metadata/key_value = "9"
+
+[node name="Cube_002" type="MeshInstance3D" parent="MAP/interactables/keypad/Keys/12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
+mesh = SubResource("ArrayMesh_tyooy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Keys/12"]
+transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
+shape = SubResource("BoxShape3D_ad7i8")
+
+[node name="13" type="StaticBody3D" parent="MAP/interactables/keypad/Keys"]
+transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.111804, -0.0600691)
+metadata/key_value = "7"
+
+[node name="Cube_002" type="MeshInstance3D" parent="MAP/interactables/keypad/Keys/13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
+mesh = SubResource("ArrayMesh_tyooy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Keys/13"]
+transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
+shape = SubResource("BoxShape3D_ad7i8")
+
+[node name="C2" type="StaticBody3D" parent="MAP/interactables/keypad/Keys"]
+transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.0374227, -0.0600691)
+metadata/key_value = "C"
+
+[node name="Cube_002" type="MeshInstance3D" parent="MAP/interactables/keypad/Keys/C2"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.0417519, 0, 2.53635)
+material_override = SubResource("StandardMaterial3D_hrn7y")
+mesh = SubResource("ArrayMesh_tyooy")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bd6f5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Keys/C2"]
+transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
+shape = SubResource("BoxShape3D_ad7i8")
+
+[node name="14" type="StaticBody3D" parent="MAP/interactables/keypad/Keys"]
+transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.183434, -0.0600691)
+metadata/key_value = "4"
+
+[node name="Cube_002" type="MeshInstance3D" parent="MAP/interactables/keypad/Keys/14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
+mesh = SubResource("ArrayMesh_tyooy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Keys/14"]
+transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
+shape = SubResource("BoxShape3D_ad7i8")
+
+[node name="15" type="StaticBody3D" parent="MAP/interactables/keypad/Keys"]
+transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.183434, 0.00327778)
+metadata/key_value = "5"
+
+[node name="Cube_002" type="MeshInstance3D" parent="MAP/interactables/keypad/Keys/15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
+mesh = SubResource("ArrayMesh_tyooy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Keys/15"]
+transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
+shape = SubResource("BoxShape3D_ad7i8")
+
+[node name="16" type="StaticBody3D" parent="MAP/interactables/keypad/Keys"]
+transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.183434, 0.0633535)
+metadata/key_value = "6"
+
+[node name="Cube_002" type="MeshInstance3D" parent="MAP/interactables/keypad/Keys/16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
+mesh = SubResource("ArrayMesh_tyooy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Keys/16"]
+transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
+shape = SubResource("BoxShape3D_ad7i8")
+
+[node name="17" type="StaticBody3D" parent="MAP/interactables/keypad/Keys"]
+transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.255702, 0.0633535)
+metadata/key_value = "3"
+
+[node name="Cube_002" type="MeshInstance3D" parent="MAP/interactables/keypad/Keys/17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
+mesh = SubResource("ArrayMesh_tyooy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Keys/17"]
+transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
+shape = SubResource("BoxShape3D_ad7i8")
+
+[node name="18" type="StaticBody3D" parent="MAP/interactables/keypad/Keys"]
+transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.255702, 0.00333118)
+metadata/key_value = "2"
+
+[node name="Cube_002" type="MeshInstance3D" parent="MAP/interactables/keypad/Keys/18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
+mesh = SubResource("ArrayMesh_tyooy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Keys/18"]
+transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
+shape = SubResource("BoxShape3D_ad7i8")
+
+[node name="19" type="StaticBody3D" parent="MAP/interactables/keypad/Keys"]
+transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.255702, -0.0613174)
+metadata/key_value = "1"
+
+[node name="Cube_002" type="MeshInstance3D" parent="MAP/interactables/keypad/Keys/19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
+mesh = SubResource("ArrayMesh_tyooy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MAP/interactables/keypad/Keys/19"]
+transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
+shape = SubResource("BoxShape3D_ad7i8")
+
 [node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("inventory") groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.37147, 0.840972, 25.8146)
 script = ExtResource("8_sowaj")
-inventory = NodePath("CanvasLayer/Inventory")
+inventory = NodePath("InventoryUI/Inventory")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -293,9 +823,9 @@ visible = false
 
 [node name="Model" type="Node3D" parent="Player"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+[node name="InventoryUI" type="CanvasLayer" parent="Player"]
 
-[node name="Inventory" parent="Player/CanvasLayer" instance=ExtResource("9_sgorh")]
+[node name="Inventory" parent="Player/InventoryUI" instance=ExtResource("9_sgorh")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -303,558 +833,6 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="window2" parent="." instance=ExtResource("3_ucbwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.481, 28)
-
-[node name="window3" parent="." instance=ExtResource("3_ucbwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.481, 28)
-
-[node name="pillar" parent="." instance=ExtResource("13_gnslx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.372246, 22)
-
-[node name="pillar5" parent="." instance=ExtResource("13_gnslx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.372246, 10)
-
-[node name="pillar6" parent="." instance=ExtResource("13_gnslx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.372246, 10)
-
-[node name="pillar2" parent="." instance=ExtResource("13_gnslx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.372246, 28)
-
-[node name="pillar3" parent="." instance=ExtResource("13_gnslx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.372246, 28)
-
-[node name="pillar4" parent="." instance=ExtResource("13_gnslx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.372246, 22)
-
-[node name="floor" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 24)
-
-[node name="floor2" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 24)
-
-[node name="floor3" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.00043, 0.0213822, 15.9961)
-
-[node name="floor4" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 16)
-
-[node name="floor5" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 8)
-
-[node name="floor6" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 8)
-
-[node name="floor7" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
-
-[node name="floor8" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-
-[node name="floor9" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 24)
-
-[node name="floor10" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 24)
-
-[node name="floor11" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 16)
-
-[node name="floor12" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 16)
-
-[node name="floor13" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 8)
-
-[node name="floor14" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 8)
-
-[node name="floor15" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
-
-[node name="floor16" parent="." instance=ExtResource("12_ooli6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 0)
-
-[node name="table" parent="." instance=ExtResource("10_jp13b")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.0957, 0.495351, 27.2185)
-
-[node name="bookshelf" parent="." instance=ExtResource("15_olb1q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22351, 0.495351, 27.4362)
-
-[node name="bookshelf2" parent="." instance=ExtResource("15_olb1q")]
-transform = Transform3D(-2.62072e-08, 0.340642, -0.940193, 1, -4.37114e-08, -4.37114e-08, -5.59871e-08, -0.940193, -0.340642, 3.50275, 1.11597, 24.929)
-
-[node name="book" parent="." instance=ExtResource("16_eshht")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.67938, 0.872049, 27.3655)
-
-[node name="book2" parent="." instance=ExtResource("16_eshht")]
-transform = Transform3D(0.994847, 0, 0.101386, 0, 1, 0, -0.101386, 0, 0.994847, 8.58101, 0.872049, 27.3655)
-
-[node name="book3" parent="." instance=ExtResource("16_eshht")]
-transform = Transform3D(0.840266, 0.53537, 0.0856326, -0.532611, 0.844618, -0.0542791, -0.101386, 0, 0.994847, 8.32721, 0.872049, 27.3655)
-
-[node name="ceiling" parent="." instance=ExtResource("17_3xkdp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 24)
-
-[node name="ceiling2" parent="." instance=ExtResource("17_3xkdp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 24)
-
-[node name="ceiling3" parent="." instance=ExtResource("17_3xkdp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 16)
-
-[node name="ceiling4" parent="." instance=ExtResource("17_3xkdp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 16)
-
-[node name="ceiling5" parent="." instance=ExtResource("17_3xkdp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.65987, 8)
-
-[node name="ceiling6" parent="." instance=ExtResource("17_3xkdp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.65987, 8)
-
-[node name="standingLight" parent="." instance=ExtResource("18_a0i7n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2799, 0.495351, 26.2413)
-
-[node name="Walls" type="Node" parent="."]
-
-[node name="wall11" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, 0.481, 28)
-
-[node name="wall13" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0.481, 28)
-
-[node name="wall14" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 27)
-
-[node name="wall15" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 25)
-
-[node name="wall16" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 23)
-
-[node name="wall24" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 21)
-
-[node name="wall25" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 19)
-
-[node name="wall26" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 17)
-
-[node name="wall33" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 15)
-
-[node name="wall35" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 13)
-
-[node name="wall37" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(-4.37109e-08, 0, 0.999989, 0, 0.999989, 0, -0.999989, 0, -4.37109e-08, 3, 0.481, 11)
-
-[node name="wall40" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0.999989, 0, -3.55271e-15, 0, 0.999989, 0, 3.55271e-15, 0, 0.999989, 4, 0.481, 10)
-
-[node name="wall41" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0.999989, 0, -3.55271e-15, 0, 0.999989, 0, 3.55271e-15, 0, 0.999989, 6, 0.481, 10)
-
-[node name="wall42" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0.999989, 0, -3.55271e-15, 0, 0.999989, 0, 3.55271e-15, 0, 0.999989, 10, 0.481, 10)
-
-[node name="wall44" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0.999989, 0, -3.55271e-15, 3.10588e-22, -0.999989, 8.74218e-08, -3.55271e-15, -8.74218e-08, -0.999989, 8, 6.481, 10)
-
-[node name="wall43" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0.999989, 0, -3.55271e-15, 0, 0.999989, 0, 3.55271e-15, 0, 0.999989, 12, 0.481, 10)
-
-[node name="wall12" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 0.481, 28)
-
-[node name="wall17" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 27)
-
-[node name="wall18" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 25)
-
-[node name="wall19" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 23)
-
-[node name="wall27" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 9, 0.481, 20)
-
-[node name="wall30" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 9, 0.481, 20)
-
-[node name="wall39" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 9, 0.481, 20)
-
-[node name="Decal2" type="Decal" parent="Walls/wall39"]
-transform = Transform3D(-4.97125, 5.03529e-07, -7.53662e-15, 0, -1.45765e-07, -1.14187, -7.50637e-07, -3.33472, 4.99128e-08, 0.134418, 2.46214, -0.672499)
-size = Vector3(0.5574, 0.38611, 2.27112)
-texture_albedo = ExtResource("19_4p47u")
-emission_energy = 0.0
-modulate = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="wall31" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 7, 0.481, 20)
-
-[node name="Decal" type="Decal" parent="Walls/wall31"]
-transform = Transform3D(-4.97125, 5.03529e-07, -7.53662e-15, 0, -1.45765e-07, -1.14187, -7.50637e-07, -3.33472, 4.99128e-08, 0.134418, 2.46214, -0.634541)
-size = Vector3(0.5574, 0.408875, 2.27112)
-texture_albedo = ExtResource("20_0tixy")
-emission_energy = 0.0
-modulate = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="wall28" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 19)
-
-[node name="wall32" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 21)
-
-[node name="wall29" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 17)
-
-[node name="wall34" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 15)
-
-[node name="wall36" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 13)
-
-[node name="wall38" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 0.481, 11)
-
-[node name="wall20" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 12, 0.481, 22)
-
-[node name="Decal" type="Decal" parent="Walls/wall20"]
-transform = Transform3D(-4.97125, 5.03529e-07, -7.53662e-15, 0, -1.45765e-07, -1.14187, -7.50637e-07, -3.33472, 4.99128e-08, -0.123826, 2.46214, -0.68634)
-size = Vector3(0.5574, 0.37781, 2.27112)
-texture_albedo = ExtResource("21_yoelf")
-emission_energy = 0.0
-modulate = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="wall21" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 10, 0.481, 22)
-
-[node name="wall22" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 6, 0.481, 22)
-
-[node name="wall23" parent="Walls" instance=ExtResource("18_7gyks")]
-transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 4.01364, 0.481, 22.0001)
-
-[node name="Decal" type="Decal" parent="Walls/wall23"]
-transform = Transform3D(-4.97125, 5.03529e-07, -7.53662e-15, 0, -1.45765e-07, -1.14187, -7.50637e-07, -3.33472, 4.99128e-08, 0.134418, 2.46214, -0.663544)
-size = Vector3(0.5574, 0.391481, 2.27112)
-texture_albedo = ExtResource("22_5jnss")
-emission_energy = 0.0
-modulate = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="CameraCopy" parent="." groups=["fakeCam"] instance=ExtResource("9_slhti")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.9522, 1.57994, 26.9489)
-script = null
-
-[node name="Area3D" type="Area3D" parent="CameraCopy"]
-transform = Transform3D(-4.37114e-06, 0, -100, 0, 100, 0, 100, 0, -4.37114e-06, 0.0380459, -0.0927926, -0.0207233)
-script = ExtResource("19_3wx7p")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraCopy/Area3D"]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -4.43757e-05, -0.00149784, -0.000496745)
-shape = SubResource("BoxShape3D_bmhe0")
-
-[node name="Prompt" type="Sprite3D" parent="CameraCopy/Area3D"]
-transform = Transform3D(-0.003, 0, -4.52987e-10, 0, 0.003, 0, 4.52987e-10, 0, -0.003, -4.26248e-05, 0.0071467, 5.1111e-05)
-visible = false
-texture = ExtResource("19_0r2rh")
-
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("23_jakge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00951, 0.495351, 10.134)
-
-[node name="keypad" parent="." instance=ExtResource("24_3sfyo")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.00786, 1.64505, 10.3708)
-
-[node name="Decals" type="Node" parent="keypad"]
-
-[node name="Decal" type="Decal" parent="keypad/Decals"]
-transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 8.94517, 1.90175, 10.4567)
-visible = false
-size = Vector3(0.015376, 0.0838128, 0.0703252)
-texture_albedo = ExtResource("25_bt3ql")
-emission_energy = 0.0
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="Decal2" type="Decal" parent="keypad/Decals"]
-transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.01091, 1.90175, 10.4567)
-visible = false
-size = Vector3(0.015376, 0.0838128, 0.0703252)
-texture_albedo = ExtResource("26_k051a")
-emission_energy = 0.0
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="Decal3" type="Decal" parent="keypad/Decals"]
-transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.07037, 1.90175, 10.4567)
-visible = false
-size = Vector3(0.015376, 0.0838128, 0.0703252)
-texture_albedo = ExtResource("27_1dq8m")
-emission_energy = 0.0
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="Decal4" type="Decal" parent="keypad/Decals"]
-transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 8.94761, 1.82617, 10.4567)
-visible = false
-size = Vector3(0.016355, 0.0838128, 0.0703252)
-texture_albedo = ExtResource("28_lwt5l")
-emission_energy = 0.0
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="Decal5" type="Decal" parent="keypad/Decals"]
-transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.0119, 1.82508, 10.4567)
-visible = false
-size = Vector3(0.015376, 0.0838128, 0.072272)
-texture_albedo = ExtResource("29_fa0ns")
-emission_energy = 0.0
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="Decal6" type="Decal" parent="keypad/Decals"]
-transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.07158, 1.82638, 10.4567)
-visible = false
-size = Vector3(0.015376, 0.0838128, 0.0703252)
-texture_albedo = ExtResource("30_df6bu")
-emission_energy = 0.0
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="Decal7" type="Decal" parent="keypad/Decals"]
-transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 8.94853, 1.75406, 10.4567)
-visible = false
-size = Vector3(0.0162952, 0.0838128, 0.0703252)
-texture_albedo = ExtResource("31_2r8v3")
-emission_energy = 0.0
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="Decal9" type="Decal" parent="keypad/Decals"]
-transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.01174, 1.75452, 10.4567)
-visible = false
-size = Vector3(0.015376, 0.0838128, 0.072272)
-texture_albedo = ExtResource("32_3h0vm")
-emission_energy = 0.0
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="Decal10" type="Decal" parent="keypad/Decals"]
-transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.06978, 1.75507, 10.4567)
-visible = false
-size = Vector3(0.015376, 0.0838128, 0.0703252)
-texture_albedo = ExtResource("33_wckjf")
-emission_energy = 0.0
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="Decal11" type="Decal" parent="keypad/Decals"]
-transform = Transform3D(4.97125, 2.70006e-13, 1.69407e-21, 0, -1.45765e-07, -1.14187, -2.98428e-13, 3.33472, -4.99128e-08, 9.01239, 1.68087, 10.4567)
-visible = false
-size = Vector3(0.015376, 0.0838128, 0.0703252)
-texture_albedo = ExtResource("34_em65o")
-emission_energy = 0.0
-upper_fade = 4.50855e-05
-lower_fade = 3.66208e-05
-
-[node name="Area3D" type="Area3D" parent="keypad"]
-transform = Transform3D(-4.37114e-06, 0, -100, 0, 100, 0, 100, 0, -4.37114e-06, 0.0380459, -0.0927926, -0.0207233)
-script = ExtResource("35_fh14p")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Area3D"]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -4.43757e-05, -0.00149784, -0.000496745)
-shape = SubResource("BoxShape3D_bmhe0")
-
-[node name="Prompt" type="Sprite3D" parent="keypad/Area3D"]
-transform = Transform3D(0.003, 0, 8.27181e-25, 0, 0.003, 0, -8.27181e-25, 0, 0.003, -4.26322e-05, 0.00789565, 5.11035e-05)
-visible = false
-texture = ExtResource("19_0r2rh")
-
-[node name="Camera3D" type="Camera3D" parent="keypad/Area3D"]
-transform = Transform3D(0.01, 0, 4.54747e-17, 0, 0.01, 0, -4.54747e-17, 0, 0.01, 0.000207171, 0.00209658, 0.00863689)
-
-[node name="Keys" type="Node3D" parent="keypad"]
-
-[node name="E2" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0395021, -0.000280619, 0.0859728)
-metadata/key_value = "E"
-
-[node name="Cube_003" type="MeshInstance3D" parent="keypad/Keys/E2"]
-transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, -0.0224085, 0.0373946, 0.0619555)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_owg2l")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/E2"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, -0.0249896, 0.0375888, 0.0772586)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="10" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.0373946, 0.00155354)
-metadata/key_value = "0"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_4h1od")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/10"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_0su4a")
-
-[node name="11" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.111804, 0.00155354)
-metadata/key_value = "8"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/11"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="12" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.111804, 0.0631523)
-metadata/key_value = "9"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/12"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/12"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="13" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.111804, -0.0600691)
-metadata/key_value = "7"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/13"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/13"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="C2" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.0374227, -0.0600691)
-metadata/key_value = "C"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/C2"]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.0417519, 0, 2.53635)
-material_override = SubResource("StandardMaterial3D_hrn7y")
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_bd6f5")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/C2"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="14" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.183434, -0.0600691)
-metadata/key_value = "4"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/14"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="15" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.183434, 0.00327778)
-metadata/key_value = "5"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/15"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/15"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="16" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.183434, 0.0633535)
-metadata/key_value = "6"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/16"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/16"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="17" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.255702, 0.0633535)
-metadata/key_value = "3"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/17"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/17"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="18" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.255702, 0.00333118)
-metadata/key_value = "2"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/18"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/18"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="19" type="StaticBody3D" parent="keypad/Keys"]
-transform = Transform3D(-1.04907e-09, 0, -0.024, 0, 0.024, 0, 0.024, 0, -1.04907e-09, 0.0392466, 0.255702, -0.0613174)
-metadata/key_value = "1"
-
-[node name="Cube_002" type="MeshInstance3D" parent="keypad/Keys/19"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100042, 0, 2.57564)
-mesh = SubResource("ArrayMesh_tyooy")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="keypad/Keys/19"]
-transform = Transform3D(-2.01033e-08, 0, 1, 0, 1, 0, -1, 0, -4.83646e-08, -0.00296982, 0.00809097, 3.17407)
-shape = SubResource("BoxShape3D_ad7i8")
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00951, 1.89104, 3.34798)
-text = "You Win!!!"
-
-[node name="Label3D" type="Label3D" parent="Label3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000119209, -0.225586, 0.0090456)
-text = "(you can alt f4 now)"
-font_size = 20
 
 [connection signal="timeout" from="MAP/weather/flashDuration" to="MAP/weather" method="_on_timer_timeout"]
 [connection signal="timeout" from="MAP/weather/soundDelay" to="MAP/weather" method="_on_sound_delay_timeout"]

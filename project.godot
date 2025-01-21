@@ -13,7 +13,7 @@ config_version=5
 config/name="WinterJam2025"
 run/main_scene="res://Scenes/mainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Textures/icon.svg"
 
 [global_group]
 

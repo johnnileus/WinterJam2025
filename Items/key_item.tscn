@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://babe66fqpaglp"]
 
-[ext_resource type="Script" path="res://Scripts/item.gd" id="1_fxw73"]
-[ext_resource type="Texture2D" uid="uid://2ll17vgr0ynu" path="res://Assets/keypic.png" id="2_b3jud"]
+[ext_resource type="Script" path="res://Scripts/InventoryScripts/item.gd" id="1_fxw73"]
+[ext_resource type="Texture2D" uid="uid://2ll17vgr0ynu" path="res://Assets/Textures/inventory/keypic.png" id="2_b3jud"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u2h6l"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=4 uid="uid://bnti6iutyi7in"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_mxea4"]
-[ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_h8avp"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/player.gd" id="1_mxea4"]
+[ext_resource type="Texture2D" uid="uid://dfwtooi8a4bm5" path="res://Assets/Textures/gratisography-tiny-parrot-free-stock-photo-800x525.jpg" id="2_h8avp"]
 [ext_resource type="PackedScene" uid="uid://cde0kyfdxi85r" path="res://Scenes/camera.tscn" id="2_xar5k"]
 [ext_resource type="PackedScene" uid="uid://b0mbmbsla8i0k" path="res://Assets/SceneModels/window_wall.tscn" id="3_37l1r"]
 [ext_resource type="PackedScene" uid="uid://beh7fqcp1w553" path="res://Inventory/inventory.tscn" id="3_n6ov6"]

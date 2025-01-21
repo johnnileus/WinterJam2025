@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://3ts1arbsyah8"]
 
-[ext_resource type="FontFile" uid="uid://clpudgu0br1ei" path="res://Assets/RealHorror-Regular.ttf" id="1_5epgo"]
+[ext_resource type="FontFile" uid="uid://clpudgu0br1ei" path="res://Assets/Textures/RealHorror-Regular.ttf" id="1_5epgo"]
 [ext_resource type="Script" path="res://Scripts/buttons.gd" id="1_85h3f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v0ayr"]

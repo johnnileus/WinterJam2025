@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://co3331bdseeg5"]
 
-[ext_resource type="Script" path="res://Scripts/inventoryItem.gd" id="1_hdr3f"]
-[ext_resource type="Texture2D" uid="uid://ds0jhknaf3j4c" path="res://icon.svg" id="2_x6cmt"]
+[ext_resource type="Script" path="res://Scripts/InventoryScripts/inventoryItem.gd" id="1_hdr3f"]
+[ext_resource type="Texture2D" uid="uid://ds0jhknaf3j4c" path="res://Assets/Textures/icon.svg" id="2_x6cmt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nvvdv"]
 

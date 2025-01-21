@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cmtbljadys08y"]
 
-[ext_resource type="Texture2D" uid="uid://dv6ypdpy0nlf0" path="res://Assets/spotlightProjector.png" id="1_0eq6k"]
-[ext_resource type="Script" path="res://Scripts/vision_light.gd" id="2_fjwbc"]
+[ext_resource type="Texture2D" uid="uid://dv6ypdpy0nlf0" path="res://Assets/Textures/spotlightProjector.png" id="1_0eq6k"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/vision_light.gd" id="2_fjwbc"]
 
 [node name="visionLight" type="SpotLight3D"]
 transform = Transform3D(-0.272672, -0.234297, 0.933143, 0.021017, 0.968213, 0.249244, -0.961878, 0.0875736, -0.25908, -0.0274887, 0.0263801, 0.0159779)

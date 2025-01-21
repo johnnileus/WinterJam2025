@@ -14,13 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://d1l0cwgpuyg8s" path="res://Assets/SceneModels/bookshelf.tscn" id="12_s16mj"]
 [ext_resource type="PackedScene" uid="uid://bf3g5i7gk8u2d" path="res://Assets/SceneModels/book.tscn" id="13_7pdbf"]
 [ext_resource type="PackedScene" uid="uid://bvr5olw6gewks" path="res://Assets/SceneModels/standing_light.tscn" id="15_181pe"]
-[ext_resource type="Script" path="res://Scripts/player.gd" id="16_jsy5g"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/player.gd" id="16_jsy5g"]
 [ext_resource type="PackedScene" uid="uid://cde0kyfdxi85r" path="res://Scenes/camera.tscn" id="17_3cgc3"]
 [ext_resource type="PackedScene" uid="uid://beh7fqcp1w553" path="res://Inventory/inventory.tscn" id="18_jxf48"]
-[ext_resource type="Script" path="res://pickup.gd" id="19_6od7y"]
+[ext_resource type="Script" path="res://Scripts/pickup.gd" id="19_6od7y"]
 [ext_resource type="PackedScene" uid="uid://b5xuxkkvhy2bt" path="res://Scenes/dangly_key.tscn" id="20_ajwcx"]
 [ext_resource type="Texture2D" uid="uid://cvqjiwofxm8e" path="res://Assets/KBM Prompts/T_Mouse_Left_Key_Dark.png" id="20_wxyuh"]
-[ext_resource type="Script" path="res://Scripts/pickupkey.gd" id="21_bmopy"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/pickupkey.gd" id="21_bmopy"]
 
 [sub_resource type="Sky" id="Sky_d7u4p"]
 
